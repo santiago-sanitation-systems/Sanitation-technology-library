@@ -1,0 +1,245 @@
+{
+  "name": "TEMPLATE_TOWN",
+  "description": "A Case Template for the input case in Santiago",
+  "inhabitants": 2144,
+  "attributes": {
+    "WATER.SUPPLY": {
+      "type": "PDF",
+      "function": "CATEGORICAL",
+      "parameters": {
+        "a": 0.2,
+        "b": 0.4,
+        "c": 0.3,
+        "d": 0.1
+      }
+    },
+    "ENERGY.SUPPLY": {
+      "type": "PDF",
+      "function": "RANGE",
+      "parameters": {
+        "a": 22,
+        "b": 24
+      }
+    },
+    "WATER.SUPPLY.DISRUPTION": {
+      "type": "PDF",
+      "function": "RANGE",
+      "parameters": {
+        "a": 2,
+        "b": 8
+      }
+    },
+    "POWER.SUPPLY.DISRUPTION": {
+      "type": "PDF",
+      "function": "RANGE",
+      "parameters": {
+        "a": 4,
+        "b": 12
+      }
+    },
+    "FREQUENCY.OF.OM": {
+      "type": "PERFORMANCE",
+      "function": "RANGE",
+      "parameters": {
+        "a": 0,
+        "b": 5
+      }
+    },
+    "TEMPERATURE.RANGE": {
+      "type": "PDF",
+      "function": "TRIANGLE",
+      "parameters": {
+        "a": 0,
+        "b": 25,
+        "c": 46
+      }
+    },
+    "FLOODING": {
+      "type": "PDF",
+      "function": "RANGE",
+      "parameters": {
+        "a": 0,
+        "b": 3
+      }
+    },
+    "VEHICULAR.ACCESS": {
+      "type": "PDF",
+      "function": "TRAPEZ",
+      "parameters": {
+        "a": 0.5,
+        "b": 5,
+        "c": 7,
+        "d": 8
+      }
+    },
+    "SLOPE": {
+      "type": "PDF",
+      "function": "TRIANGLE",
+      "parameters": {
+        "a": 0,
+        "b": 9,
+        "c": 15
+      }
+    },
+    "SOIL.TYPE": {
+      "type": "PDF",
+      "function": "CATEGORICAL",
+      "parameters": {
+        "a": 0.05,
+        "b": 0.8,
+        "c": 0.15,
+        "d": 0
+      }
+    },
+    "GROUNDWATER.DEPTH": {
+      "type": "PDF",
+      "function": "TRAPEZ",
+      "parameters": {
+        "a": 6,
+        "b": 7,
+        "c": 12,
+        "d": 25
+      }
+    },
+    "EXCAVATION": {
+      "type": "PDF",
+      "function": "CATEGORICAL",
+      "parameters": {
+        "a": 1,
+        "b": 0
+      }
+    },
+    "POPULATION.DENSITY": {
+      "type": "PDF",
+      "function": "RANGE",
+      "parameters": {
+        "a": 150,
+        "b": 300
+      }
+    },
+    "CONSTRUCTION.SKILLS": {
+      "type": "PERFORMANCE",
+      "function": "TRAPEZ",
+      "parameters": {
+        "a": 0,
+        "b": 0,
+        "c": 3,
+        "d": 5
+      }
+    },
+    "DESIGN.SKILLS": {
+      "type": "PERFORMANCE",
+      "function": "TRAPEZ",
+      "parameters": {
+        "a": 0,
+        "b": 0,
+        "c": 5,
+        "d": 6
+      }
+    },
+    "OM.SKILLS": {
+      "type": "PERFORMANCE",
+      "function": "TRAPEZ",
+      "parameters": {
+        "a": 0,
+        "b": 0,
+        "c": 4,
+        "d": 7
+      }
+    },
+    "MANAGEMENT": {
+      "type": "PDF",
+      "function": "CATEGORICAL",
+      "parameters": {
+        "a": 0.8,
+        "b": 0.1,
+        "c": 0.1
+      }
+    },
+    "PIPE.SUPPLY": {
+      "type": "PDF",
+      "function": "RANGE",
+      "parameters": {
+        "a": 20,
+        "b": 150
+      }
+    },
+    "PUMP.SUPPLY": {
+      "type": "PDF",
+      "function": "CATEGORICAL",
+      "parameters": {
+        "a": 0.7,
+        "b": 0.1,
+        "c": 0.2
+      }
+    },
+    "CONCRETE.SUPPLY": {
+      "type": "PDF",
+      "function": "RANGE",
+      "parameters": {
+        "a": 1500000,
+        "b": 2150000
+      }
+    },
+    "SPARE.PARTS.SUPPLY": {
+      "type": "PERFORMANCE",
+      "function": "CATEGORICAL",
+      "parameters": {
+        "a": 1,
+        "b": 0.7,
+        "c": 0.3
+      }
+    },
+    "SURFACE.AREA": {
+      "type": "PDF",
+      "function": "RANGE",
+      "parameters": {
+        "a": 5,
+        "b": 18
+      }
+    },
+    "WATER.VOLUME.CHANGE": {
+      "type": "PDF",
+      "function": "RANGE",
+      "parameters": {
+        "a": 40,
+        "b": 100
+      }
+    },
+    "POLLUTION.LOAD": {
+      "type": "PDF",
+      "function": "RANGE",
+      "parameters": {
+        "a": 40,
+        "b": 100
+      }
+    },
+    "USER.AWARENESS": {
+      "type": "PDF",
+      "function": "RANGE",
+      "parameters": {
+        "a": 3,
+        "b": 5
+      }
+    },
+    "CLEANSING.METHOD": {
+      "type": "PDF",
+      "function": "CATEGORICAL",
+      "parameters": {
+        "a": 0.7,
+        "b": 0.3
+      }
+    },
+    "ODOUR": {
+      "type": "PERFORMANCE",
+      "function": "CATEGORICAL",
+      "parameters": {
+        "a": 0.05,
+        "b": 0.45,
+        "c": 0.4,
+        "d": 0.1,
+        "e": 0
+      }
+    }
+  }
+}
