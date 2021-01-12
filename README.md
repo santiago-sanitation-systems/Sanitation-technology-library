@@ -39,3 +39,14 @@ The default input masses file is downloaded and converted as follows:
     end
 ```
 ## References
+
+Spuhler, D., Scheidegger, A. and Maurer, M.  2018.  Generation of sanitation system options for urban planning considering novel technologies. Water Research 145, 259-278. DOI: 10.1016/j.watres.2018.08.021.
+
+Spuhler, D., Germann, V., Kassa, K., Ketema, A.A., Sherpa, A.M., Sherpa, M.G., Maurer, M., Lüthi, C. and Langergraber, G.  2020.  Developing sanitation planning options: a tool for systematic consideration of novel technologies and systems. Journal of Environmental Management 271. DOI: 10.1016/j.jenvman.2020.111004.
+
+[dataset] Spuhler, D. and Roller, L. 2020  Sanitation technology library: details and data sources for appropriateness profiles and transfer coefficients. Supplementary material for: Spuhler et al 2020 Ex-ante quantification of nutrient, total solids, and water flows in sanitation systems. DOI: 10.25678/0000ss.
+
+Spuhler, D., Scheidegger, A. and Maurer, M.  2020.  Ex-ante quantification of nutrient, total solids, and water flows in sanitation systems. Journal of Environmental Management, 111785. DOI: 10.1016/j.jenvman.2020.111785.
+
+Spuhler, D., Scheidegger, A. and Maurer, M.  2020.  Comparative analysis of sanitation systems for resource recovery: influence of configurations and single technology components. Water Research 186, 116281. DOI: 10.1016/j.watres.2020.116281.
+
