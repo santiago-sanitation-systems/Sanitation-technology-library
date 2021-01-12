@@ -1,7 +1,6 @@
-# Sanitation Technology Library
+# Santiago Sanitation Technology Library
 
-The library characterizes sanitation technologies in a format that can be used
-directly with
+The Santiago Sanitation Technology Library characterizes sanitation technologies in a format that can be used directly with
 [Santiago](https://github.com/santiago-sanitation-systems/Santiago.jl).
 
 ## Files
