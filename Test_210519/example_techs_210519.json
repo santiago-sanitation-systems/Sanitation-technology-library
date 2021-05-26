@@ -60,8 +60,8 @@
         "function": "Categorical",
         "parameters": {
           "house": 1,
-          "public": 1,
           "yard": 1,
+          "public": 1,
           "none": 1
         }
       },
@@ -192,8 +192,8 @@
         "function": "Categorical",
         "parameters": {
           "house": 1,
-          "public": 0.5,
           "yard": 1,
+          "public": 0.5,
           "none": 0
         }
       },
@@ -1371,7 +1371,7 @@
         "function": "Categorical",
         "parameters": {
           "simple": 0.2,
-          "technical": 0.2,
+          "technical": 0.4,
           "special": 0.4
         }
       },
