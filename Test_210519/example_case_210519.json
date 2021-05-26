@@ -1,1 +1,146 @@
-{"name":"Katarniya","description":"Original file: 'Casedata_Katarnyia_DS-small.csv'","inhabitants":2144,"attributes":{"Soil.type/hydraulic.conductivity":{"type":"Pdf","function":"Categorical","parameters":{"silt":0.8,"clay":0.05,"sand":0.15,"gravel":0.0}},"Management":{"type":"Pdf","function":"Categorical","parameters":{"public":0.1,"household":0.8,"shared":0.1}},"Construction.skills":{"type":"Performance","function":"Trapez","parameters":{"c":3.0,"b":0.0,"a":0.0,"d":5.0}},"Design.skills":{"type":"Performance","function":"Trapez","parameters":{"c":5.0,"b":0.0,"a":0.0,"d":6.0}},"Energy.supply":{"type":"Pdf","function":"Range","parameters":{"b":24.0,"a":22.0}},"Slope":{"type":"Pdf","function":"Triangle","parameters":{"c":15.0,"b":0.0,"a":0.0}},"Groundwater.depth":{"type":"Pdf","function":"Trapez","parameters":{"c":12.0,"b":7.0,"a":6.0,"d":25.0}},"Vehicular.access":{"type":"Pdf","function":"Trapez","parameters":{"c":7.0,"b":5.0,"a":0.5,"d":8.0}},"Excavation":{"type":"Pdf","function":"Categorical","parameters":{"hard":0.0,"easy":1.0}},"Frequency.of.O&M":{"type":"Performance","function":"Range","parameters":{"b":5.0,"a":0.0}},"Flooding":{"type":"Pdf","function":"Range","parameters":{"b":3.0,"a":0.0}},"Water.supply":{"type":"Pdf","function":"Categorical","parameters":{"c":0.67,"b":0.03,"a":0.0,"d":0.3}},"Temperature.range":{"type":"Pdf","function":"Triangle","parameters":{"c":46.0,"b":25.0,"a":0.0}},"O&M.skills":{"type":"Performance","function":"Trapez","parameters":{"c":4.0,"b":0.0,"a":0.0,"d":7.0}},"Spare.parts.supply":{"type":"Performance","function":"Categorical","parameters":{"technical.parts":0.7,"specially.manufactured":0.3,"low.tech":1.0}}}}
+{
+  "name": "Katarniya",
+  "description": "Original file: 'Casedata_Katarnyia_DS-small.csv'",
+  "inhabitants": 2144,
+  "attributes": {
+    "WATER.SUPPLY": {
+      "type": "Pdf",
+      "function": "Categorical",
+      "parameters": {
+        "house": 0.3,
+        "yard": 0.67,
+        "public": 0.03,
+        "none": 0
+      }
+    },
+    "WATER.VOL.CONT": {
+      "type": "Pdf",
+      "function": "Trapez",
+      "parameters": {
+        "a": 10,
+        "b": 159.65,
+        "c": 159.65,
+        "d": 250
+      }
+    },
+    "ELECTRICITY.SUPPLY": {
+      "type": "Pdf",
+      "function": "Categorical",
+      "parameters": {
+        "electricity": 0.2,
+        "intermittent": 0.8,
+        "no electricity": 0
+      }
+    },
+    "FREQUENCY.OF.OM": {
+      "type": "Performance",
+      "function": "Categorical",
+      "parameters": {
+        "irregular": 0.3,
+        "regular": 0.7,
+        "continuous": 1
+      }
+    },
+    "SPARE.PARTS": {
+      "type": "Performance",
+      "function": "Categorical",
+      "parameters": {
+        "simple": 1,
+        "technical": 0.7,
+        "special": 0.3
+      }
+    },
+    "TEMPERATURE": {
+      "type": "Pdf",
+      "function": "Categorical",
+      "parameters": {
+        "very cold": 0,
+        "cold": 0.1,
+        "temperate": 0.2,
+        "warm": 0.5,
+        "hot": 0.2
+      }
+    },
+    "FLOODING": {
+      "type": "Pdf",
+      "function": "Categorical",
+      "parameters": {
+        "flooding": 0.01,
+        "no flooding": 0.99
+      }
+    },
+    "VEHICULAR.ACCESS": {
+      "type": "Pdf",
+      "function": "Categorical",
+      "parameters": {
+        "no access": 0.25,
+        "difficult": 0.25,
+        "full": 0.5
+      }
+    },
+    "SLOPE": {
+      "type": "Pdf",
+      "function": "Categorical",
+      "parameters": {
+        "flat": 0.2,
+        "not flat": 0.8
+      }
+    },
+    "SOIL.TYPE": {
+      "type": "Pdf",
+      "function": "Categorical",
+      "parameters": {
+        "clay": 0.05,
+        "silt": 0.8,
+        "sand": 0.15,
+        "gravel": 0,
+        "rock": 0
+      }
+    },
+    "GROUNDWATER.DEPTH": {
+      "type": "Pdf",
+      "function": "Trapez",
+      "parameters": {
+        "a": 6,
+        "b": 7,
+        "c": 12,
+        "d": 25
+      }
+    },
+    "EXCAVATION": {
+      "type": "Pdf",
+      "function": "Categorical",
+      "parameters": {
+        "easy": 1,
+        "hard": 0
+      }
+    },
+    "CONSTRUCTION.SKILLS": {
+      "type": "Pdf",
+      "function": "Categorical",
+      "parameters": {
+        "unskilled": 0.4,
+        "skilled": 0.4,
+        "professional": 0.2
+      }
+    },
+    "DESIGN.SKILLS": {
+      "type": "Pdf",
+      "function": "Categorical",
+      "parameters": {
+        "unskilled": 0.4,
+        "skilled": 0.4,
+        "professional": 0.2
+      }
+    },
+    "OM.SKILLS": {
+      "type": "Pdf",
+      "function": "Categorical",
+      "parameters": {
+        "unskilled": 0.4,
+        "skilled": 0.4,
+        "professional": 0.2
+      }
+    }
+  }
+}
