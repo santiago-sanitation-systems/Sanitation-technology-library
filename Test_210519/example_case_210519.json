@@ -36,9 +36,9 @@
       "type": "Performance",
       "function": "Categorical",
       "parameters": {
-        "irregular": 0.3,
-        "regular": 0.7,
-        "continuous": 1
+        "irregular": 1,
+        "regular": 0.3,
+        "continuous": 0
       }
     },
     "SPARE.PARTS": {
