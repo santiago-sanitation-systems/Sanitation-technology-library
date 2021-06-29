@@ -1,1 +1,2678 @@
-[{"name":"motorized_emptying_solids","functionalgroup":"C","inputs":{"relationship":"OR","product":["compost","dried_faeces","organics","pit_humus","pellets","processed_sludge","briquettes","sludge","stored_faeces","ash","biochar","transferred_sludge","stabilized_sludge"]},"outputs":{"relationship":"sludge > transferred_sludge > processed_sludge > pit_humus > dried_faeces > stabilized_sludge > stored_faeces > organics > compost > pellets > briquettes > biochar > ash","product":[]},"massflow":{"phosphor":{"TC":{"soilloss":0,"airloss":0,"waterloss":0.02,"x":0.98},"k":100},"nitrogen":{"TC":{"soilloss":0,"airloss":0.02,"waterloss":0.02,"x":0.96},"k":100},"water":{"TC":{"soilloss":0,"airloss":0.01,"waterloss":0.02,"x":0.97},"k":100},"totalsolids":{"TC":{"soilloss":0,"airloss":0,"waterloss":0.02,"x":0.98},"k":100}},"attributes":{"water_vol_cont_l_per_cap_day":{"type":"Performance","function":"Trapez","parameters":{"a":0,"b":7,"c":999,"d":999}},"fuel_supply":{"type":"Performance","function":"categorical","parameters":{"fuel":1,"no_fuel":0.1}},"frequency_of_om":{"type":"Pdf","function":"categorical","parameters":{"irregular":0,"regular":0.5,"continous":0.5}},"pipe_supply":{"type":"Performance","function":"categorical","parameters":{"no_pipes":1,"difficultly":1,"pipes":1}},"pump_supply":{"type":"Performance","function":"categorical","parameters":{"no_pumps":1,"difficultly_available":1,"pumps":1}},"concrete_supply":{"type":"Performance","function":"categorical","parameters":{"no_concrete":1,"difficultly_available":1,"concrete":1}},"spare_parts":{"type":"Pdf","function":"categorical","parameters":{"low":0,"technical":0.5,"special":0.5}},"flooding":{"type":"Performance","function":"categorical","parameters":{"no_flooding":0.1,"flooding":1}},"slope":{"type":"Performance","function":"categorical","parameters":{"flat":1,"not_flat":1}},"excavation":{"type":"Performance","function":"categorical","parameters":{"easy":1,"hard":1}},"construction_skills ":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":1,"professional":1}},"design_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":1,"professional":1}},"om_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":1,"professional":1}}}},{"name":"sbr","functionalgroup":"T","inputs":{"relationship":"OR","product":["blackwater","greywater","sludge","transportedblackwater","transportedgreywater","transportedsludge","transportedtransferred_sludge"]},"outputs":{"relationship":"AND","product":["effluent","processed_sludge","transportedeffluent","transportedprocessed_sludge"]},"massflow":{"phosphor":{"TC":{"soilloss":0,"airloss":0,"waterloss":0,"processed_sludge":0.74,"effluent":0.26},"k":2},"nitrogen":{"TC":{"soilloss":0,"airloss":0.64,"waterloss":0,"processed_sludge":0.24,"effluent":0.12},"k":2},"water":{"TC":{"soilloss":0,"airloss":0.05,"waterloss":0,"processed_sludge":0.75,"effluent":0.93},"k":25},"totalsolids":{"TC":{"soilloss":0,"airloss":0,"waterloss":0,"processed_sludge":0.75,"effluent":0.25},"k":25}},"attributes":{"electricity_supply":{"type":"Performance","function":"categorical","parameters":{"electricity":1,"intermittent":0,"no_electricity":0}},"frequency_of_om":{"type":"Pdf","function":"categorical","parameters":{"irregular":0,"regular":0,"continous":1}},"pipe_supply":{"type":"Performance","function":"categorical","parameters":{"no_pipes":0,"difficultly":0.5,"pipes":1}},"pump_supply":{"type":"Performance","function":"categorical","parameters":{"no_pumps":0,"difficultly_available":0.5,"pumps":1}},"concrete_supply":{"type":"Performance","function":"categorical","parameters":{"no_concrete":1,"difficultly_available":0.5,"concrete":0}},"spare_parts":{"type":"Pdf","function":"categorical","parameters":{"low":0.4,"technical":0.4,"special":0.2}},"temperature":{"type":"Performance","function":"categorical","parameters":{"very_cold":0.5,"cold":0.7,"temperate":1,"warm":1,"hot":1}},"flooding":{"type":"Performance","function":"categorical","parameters":{"no_flooding":0.9,"flooding":1}},"excavation":{"type":"Performance","function":"categorical","parameters":{"easy":1,"hard":0.75}},"surface_area_offsite":{"type":"Performance","function":"Trapez","parameters":{"a":0.12,"b":0.12,"c":999,"d":999}},"construction_skills ":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":0,"professional":1}},"design_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":0,"professional":1}},"om_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":0.5,"professional":1}}}},{"name":"wsp","functionalgroup":"T","inputs":{"relationship":"OR","product":["transportedblackwater","transportedeffluent","transportedgreywater","transportedstormwater"]},"outputs":{"relationship":"AND","product":["transportedsecondary_effluent","transportedsludge"]},"massflow":{"phosphor":{"TC":{"soilloss":0,"airloss":0,"waterloss":0,"sludge":0.47,"secondary_effluent":0.53},"k":5},"nitrogen":{"TC":{"soilloss":0,"airloss":0.49,"waterloss":0,"sludge":0.24,"secondary_effluent":0.26},"k":2},"water":{"TC":{"soilloss":0,"airloss":0.05,"waterloss":0,"sludge":0.05,"secondary_effluent":0.9},"k":5},"totalsolids":{"TC":{"soilloss":0,"airloss":0,"waterloss":0,"sludge":0.42,"secondary_effluent":0.58},"k":25}},"attributes":{"electricity_supply":{"type":"Performance","function":"categorical","parameters":{"electricity":1,"intermittent":1,"no_electricity":1}},"frequency_of_om":{"type":"Pdf","function":"categorical","parameters":{"irregular":0,"regular":1,"continous":0}},"pipe_supply":{"type":"Performance","function":"categorical","parameters":{"no_pipes":0.5,"difficultly":0.75,"pipes":1}},"pump_supply":{"type":"Performance","function":"categorical","parameters":{"no_pumps":1,"difficultly_available":1,"pumps":1}},"concrete_supply":{"type":"Performance","function":"categorical","parameters":{"no_concrete":1,"difficultly_available":1,"concrete":1}},"spare_parts":{"type":"Pdf","function":"categorical","parameters":{"low":0.6,"technical":0.4,"special":0}},"temperature":{"type":"Performance","function":"categorical","parameters":{"very_cold":0.5,"cold":0.7,"temperate":1,"warm":1,"hot":1}},"flooding":{"type":"Performance","function":"categorical","parameters":{"no_flooding":0.6,"flooding":1}},"excavation":{"type":"Performance","function":"categorical","parameters":{"easy":1,"hard":0.5}},"surface_area_offsite":{"type":"Performance","function":"Trapez","parameters":{"a":10,"b":10,"c":999,"d":999}},"construction_skills ":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":0.5,"professional":1}},"design_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":0,"professional":1}},"om_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":0.5,"skilled":1,"professional":1}}}},{"name":"leach_field","functionalgroup":"D","inputs":{"relationship":"OR","product":["effluent","greywater","urine","secondary_effluent","stored_urine","transportedeffluent","transportedgreywater","transportedurine","transportedsecondary_effluent","transportedstored_urine"]},"outputs":{"relationship":"NA","product":[]},"massflow":{"phosphor":{"TC":{"soilloss":1,"airloss":0,"recovered":0,"waterloss":0},"k":100},"nitrogen":{"TC":{"soilloss":1,"airloss":0,"recovered":0,"waterloss":0},"k":100},"water":{"TC":{"soilloss":1,"airloss":0,"recovered":0,"waterloss":0},"k":100},"totalsolids":{"TC":{"soilloss":1,"airloss":0,"recovered":0,"waterloss":0},"k":100}},"attributes":{"electricity_supply":{"type":"Performance","function":"categorical","parameters":{"electricity":1,"intermittent":0.5,"no_electricity":0.5}},"frequency_of_om":{"type":"Pdf","function":"categorical","parameters":{"irregular":0.9,"regular":0.1,"continous":0}},"pipe_supply":{"type":"Performance","function":"categorical","parameters":{"no_pipes":0,"difficultly":0.5,"pipes":1}},"pump_supply":{"type":"Performance","function":"categorical","parameters":{"no_pumps":0.5,"difficultly_available":0.75,"pumps":1}},"concrete_supply":{"type":"Performance","function":"categorical","parameters":{"no_concrete":1,"difficultly_available":1,"concrete":1}},"spare_parts":{"type":"Pdf","function":"categorical","parameters":{"low":0.3,"technical":0.5,"special":0.2}},"temperature":{"type":"Performance","function":"categorical","parameters":{"very_cold":0.5,"cold":0.7,"temperate":1,"warm":1,"hot":1}},"flooding":{"type":"Performance","function":"categorical","parameters":{"no_flooding":0.1,"flooding":1}},"soil_type":{"type":"Performance","function":"categorical","parameters":{"clay":0,"silt":0.25,"sand":1,"gravel":0.25,"rock":0}},"groundwater_depth":{"type":"Performance","function":"Trapez","parameters":{"a":3.45,"b":5,"c":999,"d":999}},"excavation":{"type":"Performance","function":"categorical","parameters":{"easy":1,"hard":0.5}},"drinking_water_exposure ":{"type":"Performance","function":"categorical","parameters":{"close":0,"not_close":1}},"construction_skills ":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":1,"professional":1}},"design_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":0.5,"professional":1}},"om_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":0.5,"professional":1}}}},{"name":"application_of_compost_biochar","functionalgroup":"D","inputs":{"relationship":"OR","product":["compost","pit_humus","ash","biochar","transportedcompost","transportedpit_humus","transportedash","transportedbiochar"]},"outputs":{"relationship":"NA","product":[]},"massflow":{"phosphor":{"TC":{"soilloss":0.01,"airloss":0,"recovered":0.98,"waterloss":0.01},"k":100},"nitrogen":{"TC":{"soilloss":0.01,"airloss":0.04,"recovered":0.94,"waterloss":0.01},"k":100},"water":{"TC":{"soilloss":0.01,"airloss":0,"recovered":0.98,"waterloss":0.01},"k":100},"totalsolids":{"TC":{"soilloss":0.3,"airloss":0,"recovered":0.69,"waterloss":0.01},"k":5}},"attributes":{"electricity_supply":{"type":"Performance","function":"categorical","parameters":{"electricity":1,"intermittent":1,"no_electricity":1}},"frequency_of_om":{"type":"Pdf","function":"categorical","parameters":{"irregular":1,"regular":0,"continous":0}},"pipe_supply":{"type":"Performance","function":"categorical","parameters":{"no_pipes":1,"difficultly":1,"pipes":1}},"pump_supply":{"type":"Performance","function":"categorical","parameters":{"no_pumps":1,"difficultly_available":1,"pumps":1}},"concrete_supply":{"type":"Performance","function":"categorical","parameters":{"no_concrete":1,"difficultly_available":1,"concrete":1}},"spare_parts":{"type":"Pdf","function":"categorical","parameters":{"low":1,"technical":0,"special":0}},"temperature":{"type":"Performance","function":"categorical","parameters":{"very_cold":0.5,"cold":0.7,"temperate":1,"warm":1,"hot":1}},"flooding":{"type":"Performance","function":"categorical","parameters":{"no_flooding":0.9,"flooding":1}},"soil_type":{"type":"Performance","function":"categorical","parameters":{"clay":1,"silt":1,"sand":1,"gravel":1,"rock":1}},"groundwater_depth":{"type":"Performance","function":"Trapez","parameters":{"a":0,"b":0,"c":999,"d":999}},"excavation":{"type":"Performance","function":"categorical","parameters":{"easy":1,"hard":1}},"drinking_water_exposure ":{"type":"Performance","function":"categorical","parameters":{"close":1,"not_close":1}},"construction_skills ":{"type":"Performance","function":"categorical","parameters":{"unskilled":1,"skilled":1,"professional":1}},"design_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":0.5,"professional":1}},"om_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":1,"skilled":1,"professional":1}}}},{"name":"conventional_sewer","functionalgroup":"C","inputs":{"relationship":"OR","product":["blackwater","effluent","greywater","stormwater","secondary_effluent"]},"outputs":{"relationship":"blackwater > effluent > greywater > secondary_effluent > stormwater","product":[]},"massflow":{"phosphor":{"TC":{"soilloss":0.1,"airloss":0,"waterloss":0,"x":0.9},"k":5},"nitrogen":{"TC":{"soilloss":0.1,"airloss":0.05,"waterloss":0,"x":0.85},"k":5},"water":{"TC":{"soilloss":0.12,"airloss":0,"waterloss":0,"x":0.88},"k":5},"totalsolids":{"TC":{"soilloss":0.1,"airloss":0,"waterloss":0,"x":0.9},"k":5}},"attributes":{"water_vol_cont_l_per_cap_day":{"type":"Performance","function":"Trapez","parameters":{"a":50,"b":100,"c":999,"d":999}},"fuel_supply":{"type":"Performance","function":"categorical","parameters":{"fuel":1,"no_fuel":1}},"frequency_of_om":{"type":"Pdf","function":"categorical","parameters":{"irregular":0.3,"regular":0.7,"continous":0}},"pipe_supply":{"type":"Performance","function":"categorical","parameters":{"no_pipes":0,"difficultly":0.5,"pipes":1}},"pump_supply":{"type":"Performance","function":"categorical","parameters":{"no_pumps":0.5,"difficultly_available":0.75,"pumps":1}},"concrete_supply":{"type":"Performance","function":"categorical","parameters":{"no_concrete":1,"difficultly_available":1,"concrete":1}},"spare_parts":{"type":"Pdf","function":"categorical","parameters":{"low":0.8,"technical":0.2,"special":0}},"flooding":{"type":"Performance","function":"categorical","parameters":{"no_flooding":0.9,"flooding":1}},"slope":{"type":"Performance","function":"categorical","parameters":{"flat":0.2,"not_flat":1}},"excavation":{"type":"Performance","function":"categorical","parameters":{"easy":1,"hard":0.25}},"construction_skills ":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":0,"professional":1}},"design_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":0,"professional":1}},"om_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":0,"professional":1}}}},{"name":"septic_tank","functionalgroup":"S","inputs":{"relationship":"OR","product":["blackwater","greywater"]},"outputs":{"relationship":"AND","product":["effluent","sludge"]},"massflow":{"phosphor":{"TC":{"soilloss":0,"airloss":0,"waterloss":0,"sludge":0.3,"effluent":0.7},"k":2},"nitrogen":{"TC":{"soilloss":0,"airloss":0.02,"waterloss":0,"sludge":0.2,"effluent":0.78},"k":2},"water":{"TC":{"soilloss":0,"airloss":0.02,"waterloss":0,"sludge":0.05,"effluent":0.93},"k":25},"totalsolids":{"TC":{"soilloss":0,"airloss":0,"waterloss":0,"sludge":0.33,"effluent":0.67},"k":5}},"attributes":{"water_vol_cont_l_per_cap_day":{"type":"Performance","function":"Trapez","parameters":{"a":30,"b":30,"c":999,"d":999}},"electricity_supply":{"type":"Performance","function":"categorical","parameters":{"electricity":1,"intermittent":1,"no_electricity":1}},"frequency_of_om":{"type":"Pdf","function":"categorical","parameters":{"irregular":0,"regular":1,"continous":0}},"pipe_supply":{"type":"Performance","function":"categorical","parameters":{"no_pipes":0.5,"difficultly":0.75,"pipes":1}},"pump_supply":{"type":"Performance","function":"categorical","parameters":{"no_pumps":1,"difficultly_available":1,"pumps":1}},"concrete_supply":{"type":"Performance","function":"categorical","parameters":{"no_concrete":1,"difficultly_available":0.75,"concrete":0.5}},"spare_parts":{"type":"Pdf","function":"categorical","parameters":{"low":0.8,"technical":0.2,"special":0}},"temperature":{"type":"Performance","function":"categorical","parameters":{"very_cold":0.7,"cold":0.8,"temperate":1,"warm":1,"hot":1}},"flooding":{"type":"Performance","function":"categorical","parameters":{"no_flooding":0.6,"flooding":1}},"vehicular_access":{"type":"Performance","function":"categorical","parameters":{"no_access":0,"difficult":0,"full":1}},"soil_type":{"type":"Performance","function":"categorical","parameters":{"clay":1,"silt":1,"sand":1,"gravel":1,"rock":1}},"groundwater_depth":{"type":"Performance","function":"Trapez","parameters":{"a":0,"b":0,"c":999,"d":999}},"excavation":{"type":"Performance","function":"categorical","parameters":{"easy":1,"hard":0.75}},"surface_area_onsite":{"type":"Performance","function":"Trapez","parameters":{"a":5,"b":5,"c":999,"d":999}},"drinking_water_exposure ":{"type":"Performance","function":"categorical","parameters":{"close":1,"not_close":1}},"construction_skills ":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":1,"professional":1}},"design_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":1,"professional":1}},"om_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":1,"professional":1}}}},{"name":"pour_flush","functionalgroup":"U","inputs":{"relationship":"NA","product":[]},"outputs":{"relationship":"NA","product":["blackwater"]},"massflow":{"phosphor":{"TC":{"soilloss":0,"airloss":0,"waterloss":0,"blackwater":1},"k":100},"nitrogen":{"TC":{"soilloss":0,"airloss":0,"waterloss":0,"blackwater":1},"k":100},"water":{"TC":{"soilloss":0,"airloss":0,"waterloss":0,"blackwater":1},"k":100},"totalsolids":{"TC":{"soilloss":0,"airloss":0,"waterloss":0,"blackwater":1},"k":100}},"attributes":{"water_supply":{"type":"Performance","function":"categorical","parameters":{"house":1,"yard":1,"public":0.5,"none":0}},"frequency_of_om":{"type":"Pdf","function":"categorical","parameters":{"irregular":0.8,"regular":0.2,"continous":0}},"concrete_supply":{"type":"Performance","function":"categorical","parameters":{"no_concrete":1,"difficultly_available":0.75,"concrete":0.5}},"spare_parts":{"type":"Pdf","function":"categorical","parameters":{"low":0.2,"technical":0.8,"special":0}},"construction_skills ":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":1,"professional":1}},"design_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":1,"professional":1}},"om_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":1,"skilled":1,"professional":1}},"cleansing_method":{"type":"Performance","function":"categorical","parameters":{"washers":1,"soft_wipers":1,"hard_wipers":0}}}},{"name":"dry_toilet","functionalgroup":"U","inputs":{"relationship":"NA","product":[]},"outputs":{"relationship":"NA","product":["excreta"]},"massflow":{"phosphor":{"TC":{"soilloss":0,"airloss":0,"waterloss":0,"excreta":1},"k":100},"nitrogen":{"TC":{"soilloss":0,"airloss":0.01,"waterloss":0,"excreta":0.99},"k":100},"water":{"TC":{"soilloss":0,"airloss":0,"waterloss":0,"excreta":1},"k":100},"totalsolids":{"TC":{"soilloss":0,"airloss":0,"waterloss":0,"excreta":1},"k":100}},"attributes":{"water_supply":{"type":"Performance","function":"categorical","parameters":{"house":1,"yard":1,"public":1,"none":1}},"frequency_of_om":{"type":"Pdf","function":"categorical","parameters":{"irregular":1,"regular":0,"continous":0}},"concrete_supply":{"type":"Performance","function":"categorical","parameters":{"no_concrete":1,"difficultly_available":0.75,"concrete":0.5}},"spare_parts":{"type":"Pdf","function":"categorical","parameters":{"low":1,"technical":0,"special":0}},"construction_skills ":{"type":"Performance","function":"categorical","parameters":{"unskilled":1,"skilled":1,"professional":1}},"design_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":1,"skilled":1,"professional":1}},"om_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":1,"skilled":1,"professional":1}},"cleansing_method":{"type":"Performance","function":"categorical","parameters":{"washers":1,"soft_wipers":1,"hard_wipers":1}}}},{"name":"composting_chamber","functionalgroup":"S","inputs":{"relationship":"OR","product":["excreta","feaces","organics"]},"outputs":{"relationship":"AND","product":["compost","effluent"]},"massflow":{"phosphor":{"TC":{"soilloss":0,"airloss":0,"waterloss":0,"compost":0.99,"effluent":0.01},"k":100},"nitrogen":{"TC":{"soilloss":0,"airloss":0.32,"waterloss":0,"compost":0.63,"effluent":0.05},"k":2},"water":{"TC":{"soilloss":0,"airloss":0.32,"waterloss":0,"compost":0.63,"effluent":0.05},"k":5},"totalsolids":{"TC":{"soilloss":0,"airloss":0.62,"waterloss":0,"compost":0.33,"effluent":0.05},"k":2}},"attributes":{"water_vol_cont_l_per_cap_day":{"type":"Performance","function":"Trapez","parameters":{"a":0,"b":0,"c":999,"d":999}},"electricity_supply":{"type":"Performance","function":"categorical","parameters":{"electricity":1,"intermittent":0.9,"no_electricity":0.7}},"frequency_of_om":{"type":"Pdf","function":"categorical","parameters":{"irregular":0,"regular":1,"continous":0}},"pipe_supply":{"type":"Performance","function":"categorical","parameters":{"no_pipes":1,"difficultly":1,"pipes":1}},"pump_supply":{"type":"Performance","function":"categorical","parameters":{"no_pumps":1,"difficultly_available":1,"pumps":1}},"concrete_supply":{"type":"Performance","function":"categorical","parameters":{"no_concrete":1,"difficultly_available":0.75,"concrete":0.5}},"spare_parts":{"type":"Pdf","function":"categorical","parameters":{"low":0,"technical":0.5,"special":0.5}},"temperature":{"type":"Performance","function":"categorical","parameters":{"very_cold":0.5,"cold":0.7,"temperate":0.9,"warm":1,"hot":1}},"flooding":{"type":"Performance","function":"categorical","parameters":{"no_flooding":1,"flooding":1}},"vehicular_access":{"type":"Performance","function":"categorical","parameters":{"no_access":0.8,"difficult":0.8,"full":1}},"soil_type":{"type":"Performance","function":"categorical","parameters":{"clay":1,"silt":1,"sand":1,"gravel":1,"rock":1}},"groundwater_depth":{"type":"Performance","function":"Trapez","parameters":{"a":0,"b":0,"c":999,"d":999}},"excavation":{"type":"Performance","function":"categorical","parameters":{"easy":1,"hard":0.75}},"surface_area_onsite":{"type":"Performance","function":"Trapez","parameters":{"a":2,"b":2,"c":999,"d":999}},"drinking_water_exposure ":{"type":"Performance","function":"categorical","parameters":{"close":1,"not_close":1}},"construction_skills ":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":1,"professional":1}},"design_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":0.5,"professional":1}},"om_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":0.5,"skilled":1,"professional":1}}}},{"name":"soak_pit","functionalgroup":"D","inputs":{"relationship":"OR","product":["effluent","greywater","urine","secondary_effluent","stabilized_urine","stored_urine"]},"outputs":{"relationship":"NA","product":[]},"massflow":{"phosphor":{"TC":{"soilloss":1,"airloss":0,"recovered":0,"waterloss":0},"k":100},"nitrogen":{"TC":{"soilloss":1,"airloss":0,"recovered":0,"waterloss":0},"k":100},"water":{"TC":{"soilloss":1,"airloss":0,"recovered":0,"waterloss":0},"k":100},"totalsolids":{"TC":{"soilloss":1,"airloss":0,"recovered":0,"waterloss":0},"k":100}},"attributes":{"electricity_supply":{"type":"Performance","function":"categorical","parameters":{"electricity":1,"intermittent":1,"no_electricity":1}},"frequency_of_om":{"type":"Pdf","function":"categorical","parameters":{"irregular":1,"regular":0,"continous":0}},"pipe_supply":{"type":"Performance","function":"categorical","parameters":{"no_pipes":1,"difficultly":1,"pipes":1}},"pump_supply":{"type":"Performance","function":"categorical","parameters":{"no_pumps":1,"difficultly_available":1,"pumps":1}},"concrete_supply":{"type":"Performance","function":"categorical","parameters":{"no_concrete":1,"difficultly_available":1,"concrete":1}},"spare_parts":{"type":"Pdf","function":"categorical","parameters":{"low":1,"technical":0,"special":0}},"temperature":{"type":"Performance","function":"categorical","parameters":{"very_cold":0.5,"cold":0.7,"temperate":1,"warm":1,"hot":1}},"flooding":{"type":"Performance","function":"categorical","parameters":{"no_flooding":0.1,"flooding":1}},"soil_type":{"type":"Performance","function":"categorical","parameters":{"clay":0,"silt":0.25,"sand":1,"gravel":0.25,"rock":0}},"groundwater_depth":{"type":"Performance","function":"Trapez","parameters":{"a":4.5,"b":7,"c":999,"d":999}},"excavation":{"type":"Performance","function":"categorical","parameters":{"easy":1,"hard":0.5}},"drinking_water_exposure ":{"type":"Performance","function":"categorical","parameters":{"close":0,"not_close":1}},"construction_skills ":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":1,"professional":1}},"design_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":0.5,"professional":1}},"om_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":1,"professional":1}}}},{"name":"application_of_sludge","functionalgroup":"D","inputs":{"relationship":"OR","product":["pit_humus","pellets","processed_sludge","briquettes","stabilized_sludge","transportedpit_humus","transportedpellets","transportedprocessed_sludge","transportedbriquettes","transportedstabilized_sludge"]},"outputs":{"relationship":"NA","product":[]},"massflow":{"phosphor":{"TC":{"soilloss":0.01,"airloss":0,"recovered":0.98,"waterloss":0.01},"k":100},"nitrogen":{"TC":{"soilloss":0.01,"airloss":0.04,"recovered":0.94,"waterloss":0.01},"k":100},"water":{"TC":{"soilloss":0.01,"airloss":0,"recovered":0.98,"waterloss":0.01},"k":100},"totalsolids":{"TC":{"soilloss":0.3,"airloss":0,"recovered":0.69,"waterloss":0.01},"k":5}},"attributes":{"electricity_supply":{"type":"Performance","function":"categorical","parameters":{"electricity":1,"intermittent":1,"no_electricity":1}},"frequency_of_om":{"type":"Pdf","function":"categorical","parameters":{"irregular":1,"regular":0,"continous":0}},"pipe_supply":{"type":"Performance","function":"categorical","parameters":{"no_pipes":1,"difficultly":1,"pipes":1}},"pump_supply":{"type":"Performance","function":"categorical","parameters":{"no_pumps":1,"difficultly_available":1,"pumps":1}},"concrete_supply":{"type":"Performance","function":"categorical","parameters":{"no_concrete":1,"difficultly_available":1,"concrete":1}},"spare_parts":{"type":"Pdf","function":"categorical","parameters":{"low":1,"technical":0,"special":0}},"temperature":{"type":"Performance","function":"categorical","parameters":{"very_cold":0.5,"cold":0.7,"temperate":1,"warm":1,"hot":1}},"flooding":{"type":"Performance","function":"categorical","parameters":{"no_flooding":0.9,"flooding":1}},"soil_type":{"type":"Performance","function":"categorical","parameters":{"clay":1,"silt":1,"sand":1,"gravel":1,"rock":1}},"groundwater_depth":{"type":"Performance","function":"Trapez","parameters":{"a":0,"b":0,"c":999,"d":999}},"excavation":{"type":"Performance","function":"categorical","parameters":{"easy":1,"hard":1}},"drinking_water_exposure ":{"type":"Performance","function":"categorical","parameters":{"close":1,"not_close":1}},"construction_skills ":{"type":"Performance","function":"categorical","parameters":{"unskilled":1,"skilled":1,"professional":1}},"design_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":0.5,"professional":1}},"om_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":1,"skilled":1,"professional":1}}}},{"name":"unplanted_drying_bed_sludge","functionalgroup":"T","inputs":{"relationship":"OR","product":["sludge","transportedsludge","transportedtransferred_sludge"]},"outputs":{"relationship":"AND","product":["effluent","stabilized_sludge","transportedeffluent","transportedstabilized_sludge"]},"massflow":{"phosphor":{"TC":{"soilloss":0,"airloss":0,"waterloss":0,"stabilized_sludge":0.62,"effluent":0.38},"k":5},"nitrogen":{"TC":{"soilloss":0,"airloss":0.29,"waterloss":0,"stabilized_sludge":0.53,"effluent":0.18},"k":5},"water":{"TC":{"soilloss":0,"airloss":0.3,"waterloss":0,"stabilized_sludge":0.31,"effluent":0.39},"k":2},"totalsolids":{"TC":{"soilloss":0,"airloss":0.04,"waterloss":0,"stabilized_sludge":0.75,"effluent":0.21},"k":100}},"attributes":{"electricity_supply":{"type":"Performance","function":"categorical","parameters":{"electricity":1,"intermittent":1,"no_electricity":1}},"frequency_of_om":{"type":"Pdf","function":"categorical","parameters":{"irregular":0,"regular":1,"continous":0}},"pipe_supply":{"type":"Performance","function":"categorical","parameters":{"no_pipes":0,"difficultly":0.5,"pipes":1}},"pump_supply":{"type":"Performance","function":"categorical","parameters":{"no_pumps":1,"difficultly_available":1,"pumps":1}},"concrete_supply":{"type":"Performance","function":"categorical","parameters":{"no_concrete":1,"difficultly_available":0.75,"concrete":0.5}},"spare_parts":{"type":"Pdf","function":"categorical","parameters":{"low":0,"technical":1,"special":0}},"temperature":{"type":"Performance","function":"categorical","parameters":{"very_cold":0.3,"cold":0.5,"temperate":1,"warm":1,"hot":1}},"flooding":{"type":"Performance","function":"categorical","parameters":{"no_flooding":0.5,"flooding":1}},"excavation":{"type":"Performance","function":"categorical","parameters":{"easy":1,"hard":0.5}},"surface_area_offsite":{"type":"Performance","function":"Trapez","parameters":{"a":0.05,"b":0.05,"c":999,"d":999}},"construction_skills ":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":0.5,"professional":1}},"design_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":0,"professional":1}},"om_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":0.5,"skilled":1,"professional":1}}}},{"name":"test_technology","functionalgroup":"S","inputs":{"relationship":"NA","product":["sludge"]},"outputs":{"relationship":"NA","product":["stabilized_sludge"]},"massflow":{"nitrogen":{"TC":{"soilloss":0,"airloss":0,"waterloss":0,"stabilized_sludge":1},"k":1},"phosphor":{"TC":{"soilloss":0,"airloss":0,"waterloss":0,"stabilized_sludge":1},"k":1},"totalsolids":{"TC":{"soilloss":0,"airloss":0,"waterloss":0,"stabilized_sludge":1},"k":1},"water":{"TC":{"soilloss":0,"airloss":0,"waterloss":0,"stabilized_sludge":1},"k":1}},"attributes":{"water_supply":{"type":"Performance","function":"categorical","parameters":{"house":1,"yard":1,"public":0.5,"none":0}},"water_vol_cont_l_per_cap_day":{"type":"Performance","function":"Trapez","parameters":{"a":0,"b":0,"c":999,"d":999}},"electricity_supply":{"type":"Performance","function":"categorical","parameters":{"electricity":1,"intermittent":0.5,"no_electricity":0}},"fuel_supply":{"type":"Performance","function":"categorical","parameters":{"fuel":1,"no_fuel":0.1}},"frequency_of_om":{"type":"Pdf","function":"categorical","parameters":{"irregular":0.3,"regular":0.7,"continous":0}},"pipe_supply":{"type":"Performance","function":"categorical","parameters":{"no_pipes":0,"difficultly":0.5,"pipes":1}},"pump_supply":{"type":"Performance","function":"categorical","parameters":{"no_pumps":1,"difficultly_available":1,"pumps":1}},"concrete_supply":{"type":"Performance","function":"categorical","parameters":{"no_concrete":1,"difficultly_available":0.75,"concrete":0.5}},"spare_parts":{"type":"Pdf","function":"categorical","parameters":{"low":0.8,"technical":0.2,"special":0}},"temperature":{"type":"Performance","function":"categorical","parameters":{"very_cold":0.5,"cold":0.7,"temperate":1,"warm":1,"hot":1}},"flooding":{"type":"Performance","function":"categorical","parameters":{"no_flooding":0.9,"flooding":1}},"vehicular_access":{"type":"Performance","function":"categorical","parameters":{"no_access":0.7,"difficult":0.8,"full":1}},"slope":{"type":"Performance","function":"categorical","parameters":{"flat":0.2,"not_flat":1}},"soil_type":{"type":"Performance","function":"categorical","parameters":{"clay":0,"silt":0.25,"sand":1,"gravel":0.25,"rock":0}},"groundwater_depth":{"type":"Performance","function":"Trapez","parameters":{"a":8,"b":13,"c":999,"d":999}},"excavation":{"type":"Performance","function":"categorical","parameters":{"easy":1,"hard":0.5}},"surface_area_onsite":{"type":"Performance","function":"Trapez","parameters":{"a":2,"b":2,"c":999,"d":999}},"surface_area_offsite":{"type":"Performance","function":"Trapez","parameters":{"a":0.05,"b":0.05,"c":999,"d":999}},"drinking_water_exposure ":{"type":"Performance","function":"categorical","parameters":{"close":0.5,"not_close":1}},"construction_skills ":{"type":"Performance","function":"categorical","parameters":{"unskilled":0.5,"skilled":1,"professional":1}},"design_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":0,"skilled":0,"professional":1}},"om_skills":{"type":"Performance","function":"categorical","parameters":{"unskilled":1,"skilled":1,"professional":1}},"cleansing_method":{"type":"Performance","function":"categorical","parameters":{"washers":1,"soft_wipers":1,"hard_wipers":0}}}}]
+[
+  {
+    "name": "motorized_emptying_solids",
+    "functionalgroup": "C",
+    "inputs": {
+      "relationship": "OR",
+      "product": [
+        "compost",
+        "dried_faeces",
+        "organics",
+        "pit_humus",
+        "pellets",
+        "processed_sludge",
+        "briquettes",
+        "sludge",
+        "stored_faeces",
+        "ash",
+        "biochar",
+        "transferred_sludge",
+        "stabilized_sludge"
+      ]
+    },
+    "outputs": {
+      "relationship": "sludge > transferred_sludge > processed_sludge > pit_humus > dried_faeces > stabilized_sludge > stored_faeces > organics > compost > pellets > briquettes > biochar > ash",
+      "product": []
+    },
+    "massflow": {
+      "phosphor": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0,
+          "waterloss": 0.02,
+          "x": 0.98
+        },
+        "k": 100
+      },
+      "nitrogen": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0.02,
+          "waterloss": 0.02,
+          "x": 0.96
+        },
+        "k": 100
+      },
+      "water": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0.01,
+          "waterloss": 0.02,
+          "x": 0.97
+        },
+        "k": 100
+      },
+      "totalsolids": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0,
+          "waterloss": 0.02,
+          "x": 0.98
+        },
+        "k": 100
+      }
+    },
+    "attributes": {
+      "water_vol_cont_l_per_cap_day": {
+        "type": "Performance",
+        "function": "Trapez",
+        "parameters": {
+          "a": 0,
+          "b": 7,
+          "c": 999,
+          "d": 999
+        }
+      },
+      "fuel_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "fuel": 1,
+          "no_fuel": 0.1
+        }
+      },
+      "frequency_of_om": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "irregular": 0,
+          "regular": 0.5,
+          "continous": 0.5
+        }
+      },
+      "pipe_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_pipes": 1,
+          "difficultly": 1,
+          "pipes": 1
+        }
+      },
+      "pump_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_pumps": 1,
+          "difficultly_available": 1,
+          "pumps": 1
+        }
+      },
+      "concrete_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_concrete": 1,
+          "difficultly_available": 1,
+          "concrete": 1
+        }
+      },
+      "spare_parts": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "low": 0,
+          "technical": 0.5,
+          "special": 0.5
+        }
+      },
+      "flooding": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_flooding": 0.1,
+          "flooding": 1
+        }
+      },
+      "slope": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "flat": 1,
+          "not_flat": 1
+        }
+      },
+      "excavation": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "easy": 1,
+          "hard": 1
+        }
+      },
+      "construction_skills ": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 1,
+          "professional": 1
+        }
+      },
+      "design_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 1,
+          "professional": 1
+        }
+      },
+      "om_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 1,
+          "professional": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "sbr",
+    "functionalgroup": "T",
+    "inputs": {
+      "relationship": "OR",
+      "product": [
+        "blackwater",
+        "greywater",
+        "sludge",
+        "transportedblackwater",
+        "transportedgreywater",
+        "transportedsludge",
+        "transportedtransferred_sludge"
+      ]
+    },
+    "outputs": {
+      "relationship": "AND",
+      "product": [
+        "effluent",
+        "processed_sludge",
+        "transportedeffluent",
+        "transportedprocessed_sludge"
+      ]
+    },
+    "massflow": {
+      "phosphor": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0,
+          "waterloss": 0,
+          "processed_sludge": 0.74,
+          "effluent": 0.26
+        },
+        "k": 2
+      },
+      "nitrogen": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0.64,
+          "waterloss": 0,
+          "processed_sludge": 0.24,
+          "effluent": 0.12
+        },
+        "k": 2
+      },
+      "water": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0.05,
+          "waterloss": 0,
+          "processed_sludge": 0.02,
+          "effluent": 0.93
+        },
+        "k": 25
+      },
+      "totalsolids": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0,
+          "waterloss": 0,
+          "processed_sludge": 0.75,
+          "effluent": 0.25
+        },
+        "k": 25
+      }
+    },
+    "attributes": {
+      "electricity_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "electricity": 1,
+          "intermittent": 0,
+          "no_electricity": 0
+        }
+      },
+      "frequency_of_om": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "irregular": 0,
+          "regular": 0,
+          "continous": 1
+        }
+      },
+      "pipe_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_pipes": 0,
+          "difficultly": 0.5,
+          "pipes": 1
+        }
+      },
+      "pump_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_pumps": 0,
+          "difficultly_available": 0.5,
+          "pumps": 1
+        }
+      },
+      "concrete_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_concrete": 1,
+          "difficultly_available": 0.5,
+          "concrete": 0
+        }
+      },
+      "spare_parts": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "low": 0.4,
+          "technical": 0.4,
+          "special": 0.2
+        }
+      },
+      "temperature": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "very_cold": 0.5,
+          "cold": 0.7,
+          "temperate": 1,
+          "warm": 1,
+          "hot": 1
+        }
+      },
+      "flooding": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_flooding": 0.9,
+          "flooding": 1
+        }
+      },
+      "excavation": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "easy": 1,
+          "hard": 0.75
+        }
+      },
+      "surface_area_offsite": {
+        "type": "Performance",
+        "function": "Trapez",
+        "parameters": {
+          "a": 0.12,
+          "b": 0.12,
+          "c": 999,
+          "d": 999
+        }
+      },
+      "construction_skills ": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 0,
+          "professional": 1
+        }
+      },
+      "design_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 0,
+          "professional": 1
+        }
+      },
+      "om_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 0.5,
+          "professional": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "wsp",
+    "functionalgroup": "T",
+    "inputs": {
+      "relationship": "OR",
+      "product": [
+        "transportedblackwater",
+        "transportedeffluent",
+        "transportedgreywater",
+        "transportedstormwater"
+      ]
+    },
+    "outputs": {
+      "relationship": "AND",
+      "product": [
+        "transportedsecondary_effluent",
+        "transportedsludge"
+      ]
+    },
+    "massflow": {
+      "phosphor": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0,
+          "waterloss": 0,
+          "sludge": 0.47,
+          "secondary_effluent": 0.53
+        },
+        "k": 5
+      },
+      "nitrogen": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0.5,
+          "waterloss": 0,
+          "sludge": 0.24,
+          "secondary_effluent": 0.26
+        },
+        "k": 2
+      },
+      "water": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0.05,
+          "waterloss": 0,
+          "sludge": 0.05,
+          "secondary_effluent": 0.9
+        },
+        "k": 5
+      },
+      "totalsolids": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0,
+          "waterloss": 0,
+          "sludge": 0.42,
+          "secondary_effluent": 0.58
+        },
+        "k": 25
+      }
+    },
+    "attributes": {
+      "electricity_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "electricity": 1,
+          "intermittent": 1,
+          "no_electricity": 1
+        }
+      },
+      "frequency_of_om": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "irregular": 0,
+          "regular": 1,
+          "continous": 0
+        }
+      },
+      "pipe_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_pipes": 0.5,
+          "difficultly": 0.75,
+          "pipes": 1
+        }
+      },
+      "pump_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_pumps": 1,
+          "difficultly_available": 1,
+          "pumps": 1
+        }
+      },
+      "concrete_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_concrete": 1,
+          "difficultly_available": 1,
+          "concrete": 1
+        }
+      },
+      "spare_parts": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "low": 0.6,
+          "technical": 0.4,
+          "special": 0
+        }
+      },
+      "temperature": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "very_cold": 0.5,
+          "cold": 0.7,
+          "temperate": 1,
+          "warm": 1,
+          "hot": 1
+        }
+      },
+      "flooding": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_flooding": 0.6,
+          "flooding": 1
+        }
+      },
+      "excavation": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "easy": 1,
+          "hard": 0.5
+        }
+      },
+      "surface_area_offsite": {
+        "type": "Performance",
+        "function": "Trapez",
+        "parameters": {
+          "a": 10,
+          "b": 10,
+          "c": 999,
+          "d": 999
+        }
+      },
+      "construction_skills ": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 0.5,
+          "professional": 1
+        }
+      },
+      "design_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 0,
+          "professional": 1
+        }
+      },
+      "om_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0.5,
+          "skilled": 1,
+          "professional": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "leach_field",
+    "functionalgroup": "D",
+    "inputs": {
+      "relationship": "OR",
+      "product": [
+        "effluent",
+        "greywater",
+        "urine",
+        "secondary_effluent",
+        "stored_urine",
+        "transportedeffluent",
+        "transportedgreywater",
+        "transportedurine",
+        "transportedsecondary_effluent",
+        "transportedstored_urine"
+      ]
+    },
+    "outputs": {
+      "relationship": "NA",
+      "product": []
+    },
+    "massflow": {
+      "phosphor": {
+        "TC": {
+          "soilloss": 1,
+          "airloss": 0,
+          "recovered": 0,
+          "waterloss": 0
+        },
+        "k": 100
+      },
+      "nitrogen": {
+        "TC": {
+          "soilloss": 1,
+          "airloss": 0,
+          "recovered": 0,
+          "waterloss": 0
+        },
+        "k": 100
+      },
+      "water": {
+        "TC": {
+          "soilloss": 1,
+          "airloss": 0,
+          "recovered": 0,
+          "waterloss": 0
+        },
+        "k": 100
+      },
+      "totalsolids": {
+        "TC": {
+          "soilloss": 1,
+          "airloss": 0,
+          "recovered": 0,
+          "waterloss": 0
+        },
+        "k": 100
+      }
+    },
+    "attributes": {
+      "electricity_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "electricity": 1,
+          "intermittent": 0.5,
+          "no_electricity": 0.5
+        }
+      },
+      "frequency_of_om": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "irregular": 0.9,
+          "regular": 0.1,
+          "continous": 0
+        }
+      },
+      "pipe_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_pipes": 0,
+          "difficultly": 0.5,
+          "pipes": 1
+        }
+      },
+      "pump_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_pumps": 0.5,
+          "difficultly_available": 0.75,
+          "pumps": 1
+        }
+      },
+      "concrete_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_concrete": 1,
+          "difficultly_available": 1,
+          "concrete": 1
+        }
+      },
+      "spare_parts": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "low": 0.3,
+          "technical": 0.5,
+          "special": 0.2
+        }
+      },
+      "temperature": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "very_cold": 0.5,
+          "cold": 0.7,
+          "temperate": 1,
+          "warm": 1,
+          "hot": 1
+        }
+      },
+      "flooding": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_flooding": 0.1,
+          "flooding": 1
+        }
+      },
+      "soil_type": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "clay": 0,
+          "silt": 0.25,
+          "sand": 1,
+          "gravel": 0.25,
+          "rock": 0
+        }
+      },
+      "groundwater_depth": {
+        "type": "Performance",
+        "function": "Trapez",
+        "parameters": {
+          "a": 3.45,
+          "b": 5,
+          "c": 999,
+          "d": 999
+        }
+      },
+      "excavation": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "easy": 1,
+          "hard": 0.5
+        }
+      },
+      "drinking_water_exposure ": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "close": 0,
+          "not_close": 1
+        }
+      },
+      "construction_skills ": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 1,
+          "professional": 1
+        }
+      },
+      "design_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 0.5,
+          "professional": 1
+        }
+      },
+      "om_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 0.5,
+          "professional": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "application_of_compost_biochar",
+    "functionalgroup": "D",
+    "inputs": {
+      "relationship": "OR",
+      "product": [
+        "compost",
+        "pit_humus",
+        "ash",
+        "biochar",
+        "transportedcompost",
+        "transportedpit_humus",
+        "transportedash",
+        "transportedbiochar"
+      ]
+    },
+    "outputs": {
+      "relationship": "NA",
+      "product": []
+    },
+    "massflow": {
+      "phosphor": {
+        "TC": {
+          "soilloss": 0.01,
+          "airloss": 0,
+          "recovered": 0.98,
+          "waterloss": 0.01
+        },
+        "k": 100
+      },
+      "nitrogen": {
+        "TC": {
+          "soilloss": 0.01,
+          "airloss": 0.04,
+          "recovered": 0.94,
+          "waterloss": 0.01
+        },
+        "k": 100
+      },
+      "water": {
+        "TC": {
+          "soilloss": 0.01,
+          "airloss": 0,
+          "recovered": 0.98,
+          "waterloss": 0.01
+        },
+        "k": 100
+      },
+      "totalsolids": {
+        "TC": {
+          "soilloss": 0.3,
+          "airloss": 0,
+          "recovered": 0.69,
+          "waterloss": 0.01
+        },
+        "k": 5
+      }
+    },
+    "attributes": {
+      "electricity_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "electricity": 1,
+          "intermittent": 1,
+          "no_electricity": 1
+        }
+      },
+      "frequency_of_om": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "irregular": 1,
+          "regular": 0,
+          "continous": 0
+        }
+      },
+      "pipe_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_pipes": 1,
+          "difficultly": 1,
+          "pipes": 1
+        }
+      },
+      "pump_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_pumps": 1,
+          "difficultly_available": 1,
+          "pumps": 1
+        }
+      },
+      "concrete_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_concrete": 1,
+          "difficultly_available": 1,
+          "concrete": 1
+        }
+      },
+      "spare_parts": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "low": 1,
+          "technical": 0,
+          "special": 0
+        }
+      },
+      "temperature": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "very_cold": 0.5,
+          "cold": 0.7,
+          "temperate": 1,
+          "warm": 1,
+          "hot": 1
+        }
+      },
+      "flooding": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_flooding": 0.9,
+          "flooding": 1
+        }
+      },
+      "soil_type": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "clay": 1,
+          "silt": 1,
+          "sand": 1,
+          "gravel": 1,
+          "rock": 1
+        }
+      },
+      "groundwater_depth": {
+        "type": "Performance",
+        "function": "Trapez",
+        "parameters": {
+          "a": 0,
+          "b": 0,
+          "c": 999,
+          "d": 999
+        }
+      },
+      "excavation": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "easy": 1,
+          "hard": 1
+        }
+      },
+      "drinking_water_exposure ": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "close": 1,
+          "not_close": 1
+        }
+      },
+      "construction_skills ": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 1,
+          "skilled": 1,
+          "professional": 1
+        }
+      },
+      "design_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 0.5,
+          "professional": 1
+        }
+      },
+      "om_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 1,
+          "skilled": 1,
+          "professional": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "conventional_sewer",
+    "functionalgroup": "C",
+    "inputs": {
+      "relationship": "OR",
+      "product": [
+        "blackwater",
+        "effluent",
+        "greywater",
+        "stormwater",
+        "secondary_effluent"
+      ]
+    },
+    "outputs": {
+      "relationship": "blackwater > effluent > greywater > secondary_effluent > stormwater",
+      "product": []
+    },
+    "massflow": {
+      "phosphor": {
+        "TC": {
+          "soilloss": 0.1,
+          "airloss": 0,
+          "waterloss": 0,
+          "x": 0.9
+        },
+        "k": 5
+      },
+      "nitrogen": {
+        "TC": {
+          "soilloss": 0.1,
+          "airloss": 0.05,
+          "waterloss": 0,
+          "x": 0.85
+        },
+        "k": 5
+      },
+      "water": {
+        "TC": {
+          "soilloss": 0.12,
+          "airloss": 0,
+          "waterloss": 0,
+          "x": 0.88
+        },
+        "k": 5
+      },
+      "totalsolids": {
+        "TC": {
+          "soilloss": 0.1,
+          "airloss": 0,
+          "waterloss": 0,
+          "x": 0.9
+        },
+        "k": 5
+      }
+    },
+    "attributes": {
+      "water_vol_cont_l_per_cap_day": {
+        "type": "Performance",
+        "function": "Trapez",
+        "parameters": {
+          "a": 50,
+          "b": 100,
+          "c": 999,
+          "d": 999
+        }
+      },
+      "fuel_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "fuel": 1,
+          "no_fuel": 1
+        }
+      },
+      "frequency_of_om": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "irregular": 0.3,
+          "regular": 0.7,
+          "continous": 0
+        }
+      },
+      "pipe_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_pipes": 0,
+          "difficultly": 0.5,
+          "pipes": 1
+        }
+      },
+      "pump_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_pumps": 0.5,
+          "difficultly_available": 0.75,
+          "pumps": 1
+        }
+      },
+      "concrete_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_concrete": 1,
+          "difficultly_available": 1,
+          "concrete": 1
+        }
+      },
+      "spare_parts": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "low": 0.8,
+          "technical": 0.2,
+          "special": 0
+        }
+      },
+      "flooding": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_flooding": 0.9,
+          "flooding": 1
+        }
+      },
+      "slope": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "flat": 0.2,
+          "not_flat": 1
+        }
+      },
+      "excavation": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "easy": 1,
+          "hard": 0.25
+        }
+      },
+      "construction_skills ": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 0,
+          "professional": 1
+        }
+      },
+      "design_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 0,
+          "professional": 1
+        }
+      },
+      "om_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 0,
+          "professional": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "septic_tank",
+    "functionalgroup": "S",
+    "inputs": {
+      "relationship": "OR",
+      "product": [
+        "blackwater",
+        "greywater"
+      ]
+    },
+    "outputs": {
+      "relationship": "AND",
+      "product": [
+        "effluent",
+        "sludge"
+      ]
+    },
+    "massflow": {
+      "phosphor": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0,
+          "waterloss": 0,
+          "sludge": 0.3,
+          "effluent": 0.7
+        },
+        "k": 2
+      },
+      "nitrogen": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0.02,
+          "waterloss": 0,
+          "sludge": 0.2,
+          "effluent": 0.78
+        },
+        "k": 2
+      },
+      "water": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0.02,
+          "waterloss": 0,
+          "sludge": 0.05,
+          "effluent": 0.93
+        },
+        "k": 25
+      },
+      "totalsolids": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0,
+          "waterloss": 0,
+          "sludge": 0.33,
+          "effluent": 0.67
+        },
+        "k": 5
+      }
+    },
+    "attributes": {
+      "water_vol_cont_l_per_cap_day": {
+        "type": "Performance",
+        "function": "Trapez",
+        "parameters": {
+          "a": 30,
+          "b": 30,
+          "c": 999,
+          "d": 999
+        }
+      },
+      "electricity_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "electricity": 1,
+          "intermittent": 1,
+          "no_electricity": 1
+        }
+      },
+      "frequency_of_om": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "irregular": 0,
+          "regular": 1,
+          "continous": 0
+        }
+      },
+      "pipe_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_pipes": 0.5,
+          "difficultly": 0.75,
+          "pipes": 1
+        }
+      },
+      "pump_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_pumps": 1,
+          "difficultly_available": 1,
+          "pumps": 1
+        }
+      },
+      "concrete_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_concrete": 1,
+          "difficultly_available": 0.75,
+          "concrete": 0.5
+        }
+      },
+      "spare_parts": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "low": 0.8,
+          "technical": 0.2,
+          "special": 0
+        }
+      },
+      "temperature": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "very_cold": 0.7,
+          "cold": 0.8,
+          "temperate": 1,
+          "warm": 1,
+          "hot": 1
+        }
+      },
+      "flooding": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_flooding": 0.6,
+          "flooding": 1
+        }
+      },
+      "vehicular_access": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_access": 0,
+          "difficult": 0,
+          "full": 1
+        }
+      },
+      "soil_type": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "clay": 1,
+          "silt": 1,
+          "sand": 1,
+          "gravel": 1,
+          "rock": 1
+        }
+      },
+      "groundwater_depth": {
+        "type": "Performance",
+        "function": "Trapez",
+        "parameters": {
+          "a": 0,
+          "b": 0,
+          "c": 999,
+          "d": 999
+        }
+      },
+      "excavation": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "easy": 1,
+          "hard": 0.75
+        }
+      },
+      "surface_area_onsite": {
+        "type": "Performance",
+        "function": "Trapez",
+        "parameters": {
+          "a": 5,
+          "b": 5,
+          "c": 999,
+          "d": 999
+        }
+      },
+      "drinking_water_exposure ": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "close": 1,
+          "not_close": 1
+        }
+      },
+      "construction_skills ": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 1,
+          "professional": 1
+        }
+      },
+      "design_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 1,
+          "professional": 1
+        }
+      },
+      "om_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 1,
+          "professional": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "pour_flush",
+    "functionalgroup": "U",
+    "inputs": {
+      "relationship": "NA",
+      "product": []
+    },
+    "outputs": {
+      "relationship": "NA",
+      "product": [
+        "blackwater"
+      ]
+    },
+    "massflow": {
+      "phosphor": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0,
+          "waterloss": 0,
+          "blackwater": 1
+        },
+        "k": 100
+      },
+      "nitrogen": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0,
+          "waterloss": 0,
+          "blackwater": 1
+        },
+        "k": 100
+      },
+      "water": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0,
+          "waterloss": 0,
+          "blackwater": 1
+        },
+        "k": 100
+      },
+      "totalsolids": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0,
+          "waterloss": 0,
+          "blackwater": 1
+        },
+        "k": 100
+      }
+    },
+    "attributes": {
+      "water_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "house": 1,
+          "yard": 1,
+          "public": 0.5,
+          "none": 0
+        }
+      },
+      "frequency_of_om": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "irregular": 0.8,
+          "regular": 0.2,
+          "continous": 0
+        }
+      },
+      "concrete_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_concrete": 1,
+          "difficultly_available": 0.75,
+          "concrete": 0.5
+        }
+      },
+      "spare_parts": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "low": 0.2,
+          "technical": 0.8,
+          "special": 0
+        }
+      },
+      "construction_skills ": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 1,
+          "professional": 1
+        }
+      },
+      "design_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 1,
+          "professional": 1
+        }
+      },
+      "om_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 1,
+          "skilled": 1,
+          "professional": 1
+        }
+      },
+      "cleansing_method": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "washers": 1,
+          "soft_wipers": 1,
+          "hard_wipers": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "dry_toilet",
+    "functionalgroup": "U",
+    "inputs": {
+      "relationship": "NA",
+      "product": []
+    },
+    "outputs": {
+      "relationship": "NA",
+      "product": [
+        "excreta"
+      ]
+    },
+    "massflow": {
+      "phosphor": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0,
+          "waterloss": 0,
+          "excreta": 1
+        },
+        "k": 100
+      },
+      "nitrogen": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0.01,
+          "waterloss": 0,
+          "excreta": 0.99
+        },
+        "k": 100
+      },
+      "water": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0,
+          "waterloss": 0,
+          "excreta": 1
+        },
+        "k": 100
+      },
+      "totalsolids": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0,
+          "waterloss": 0,
+          "excreta": 1
+        },
+        "k": 100
+      }
+    },
+    "attributes": {
+      "water_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "house": 1,
+          "yard": 1,
+          "public": 1,
+          "none": 1
+        }
+      },
+      "frequency_of_om": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "irregular": 1,
+          "regular": 0,
+          "continous": 0
+        }
+      },
+      "concrete_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_concrete": 1,
+          "difficultly_available": 0.75,
+          "concrete": 0.5
+        }
+      },
+      "spare_parts": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "low": 1,
+          "technical": 0,
+          "special": 0
+        }
+      },
+      "construction_skills ": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 1,
+          "skilled": 1,
+          "professional": 1
+        }
+      },
+      "design_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 1,
+          "skilled": 1,
+          "professional": 1
+        }
+      },
+      "om_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 1,
+          "skilled": 1,
+          "professional": 1
+        }
+      },
+      "cleansing_method": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "washers": 1,
+          "soft_wipers": 1,
+          "hard_wipers": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "composting_chamber",
+    "functionalgroup": "S",
+    "inputs": {
+      "relationship": "OR",
+      "product": [
+        "excreta",
+        "feaces",
+        "organics"
+      ]
+    },
+    "outputs": {
+      "relationship": "AND",
+      "product": [
+        "compost",
+        "effluent"
+      ]
+    },
+    "massflow": {
+      "phosphor": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0,
+          "waterloss": 0,
+          "compost": 0.99,
+          "effluent": 0.01
+        },
+        "k": 100
+      },
+      "nitrogen": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0.32,
+          "waterloss": 0,
+          "compost": 0.63,
+          "effluent": 0.05
+        },
+        "k": 2
+      },
+      "water": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0.32,
+          "waterloss": 0,
+          "compost": 0.63,
+          "effluent": 0.05
+        },
+        "k": 5
+      },
+      "totalsolids": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0.62,
+          "waterloss": 0,
+          "compost": 0.33,
+          "effluent": 0.05
+        },
+        "k": 2
+      }
+    },
+    "attributes": {
+      "water_vol_cont_l_per_cap_day": {
+        "type": "Performance",
+        "function": "Trapez",
+        "parameters": {
+          "a": 0,
+          "b": 0,
+          "c": 999,
+          "d": 999
+        }
+      },
+      "electricity_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "electricity": 1,
+          "intermittent": 0.9,
+          "no_electricity": 0.7
+        }
+      },
+      "frequency_of_om": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "irregular": 0,
+          "regular": 1,
+          "continous": 0
+        }
+      },
+      "pipe_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_pipes": 1,
+          "difficultly": 1,
+          "pipes": 1
+        }
+      },
+      "pump_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_pumps": 1,
+          "difficultly_available": 1,
+          "pumps": 1
+        }
+      },
+      "concrete_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_concrete": 1,
+          "difficultly_available": 0.75,
+          "concrete": 0.5
+        }
+      },
+      "spare_parts": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "low": 0,
+          "technical": 0.5,
+          "special": 0.5
+        }
+      },
+      "temperature": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "very_cold": 0.5,
+          "cold": 0.7,
+          "temperate": 0.9,
+          "warm": 1,
+          "hot": 1
+        }
+      },
+      "flooding": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_flooding": 1,
+          "flooding": 1
+        }
+      },
+      "vehicular_access": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_access": 0.8,
+          "difficult": 0.8,
+          "full": 1
+        }
+      },
+      "soil_type": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "clay": 1,
+          "silt": 1,
+          "sand": 1,
+          "gravel": 1,
+          "rock": 1
+        }
+      },
+      "groundwater_depth": {
+        "type": "Performance",
+        "function": "Trapez",
+        "parameters": {
+          "a": 0,
+          "b": 0,
+          "c": 999,
+          "d": 999
+        }
+      },
+      "excavation": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "easy": 1,
+          "hard": 0.75
+        }
+      },
+      "surface_area_onsite": {
+        "type": "Performance",
+        "function": "Trapez",
+        "parameters": {
+          "a": 2,
+          "b": 2,
+          "c": 999,
+          "d": 999
+        }
+      },
+      "drinking_water_exposure ": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "close": 1,
+          "not_close": 1
+        }
+      },
+      "construction_skills ": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 1,
+          "professional": 1
+        }
+      },
+      "design_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 0.5,
+          "professional": 1
+        }
+      },
+      "om_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0.5,
+          "skilled": 1,
+          "professional": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "soak_pit",
+    "functionalgroup": "D",
+    "inputs": {
+      "relationship": "OR",
+      "product": [
+        "effluent",
+        "greywater",
+        "urine",
+        "secondary_effluent",
+        "stabilized_urine",
+        "stored_urine"
+      ]
+    },
+    "outputs": {
+      "relationship": "NA",
+      "product": []
+    },
+    "massflow": {
+      "phosphor": {
+        "TC": {
+          "soilloss": 1,
+          "airloss": 0,
+          "recovered": 0,
+          "waterloss": 0
+        },
+        "k": 100
+      },
+      "nitrogen": {
+        "TC": {
+          "soilloss": 1,
+          "airloss": 0,
+          "recovered": 0,
+          "waterloss": 0
+        },
+        "k": 100
+      },
+      "water": {
+        "TC": {
+          "soilloss": 1,
+          "airloss": 0,
+          "recovered": 0,
+          "waterloss": 0
+        },
+        "k": 100
+      },
+      "totalsolids": {
+        "TC": {
+          "soilloss": 1,
+          "airloss": 0,
+          "recovered": 0,
+          "waterloss": 0
+        },
+        "k": 100
+      }
+    },
+    "attributes": {
+      "electricity_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "electricity": 1,
+          "intermittent": 1,
+          "no_electricity": 1
+        }
+      },
+      "frequency_of_om": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "irregular": 1,
+          "regular": 0,
+          "continous": 0
+        }
+      },
+      "pipe_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_pipes": 1,
+          "difficultly": 1,
+          "pipes": 1
+        }
+      },
+      "pump_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_pumps": 1,
+          "difficultly_available": 1,
+          "pumps": 1
+        }
+      },
+      "concrete_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_concrete": 1,
+          "difficultly_available": 1,
+          "concrete": 1
+        }
+      },
+      "spare_parts": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "low": 1,
+          "technical": 0,
+          "special": 0
+        }
+      },
+      "temperature": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "very_cold": 0.5,
+          "cold": 0.7,
+          "temperate": 1,
+          "warm": 1,
+          "hot": 1
+        }
+      },
+      "flooding": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_flooding": 0.1,
+          "flooding": 1
+        }
+      },
+      "soil_type": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "clay": 0,
+          "silt": 0.25,
+          "sand": 1,
+          "gravel": 0.25,
+          "rock": 0
+        }
+      },
+      "groundwater_depth": {
+        "type": "Performance",
+        "function": "Trapez",
+        "parameters": {
+          "a": 4.5,
+          "b": 7,
+          "c": 999,
+          "d": 999
+        }
+      },
+      "excavation": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "easy": 1,
+          "hard": 0.5
+        }
+      },
+      "drinking_water_exposure ": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "close": 0,
+          "not_close": 1
+        }
+      },
+      "construction_skills ": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 1,
+          "professional": 1
+        }
+      },
+      "design_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 0.5,
+          "professional": 1
+        }
+      },
+      "om_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 1,
+          "professional": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "application_of_sludge",
+    "functionalgroup": "D",
+    "inputs": {
+      "relationship": "OR",
+      "product": [
+        "pit_humus",
+        "pellets",
+        "processed_sludge",
+        "briquettes",
+        "stabilized_sludge",
+        "transportedpit_humus",
+        "transportedpellets",
+        "transportedprocessed_sludge",
+        "transportedbriquettes",
+        "transportedstabilized_sludge"
+      ]
+    },
+    "outputs": {
+      "relationship": "NA",
+      "product": []
+    },
+    "massflow": {
+      "phosphor": {
+        "TC": {
+          "soilloss": 0.01,
+          "airloss": 0,
+          "recovered": 0.98,
+          "waterloss": 0.01
+        },
+        "k": 100
+      },
+      "nitrogen": {
+        "TC": {
+          "soilloss": 0.01,
+          "airloss": 0.04,
+          "recovered": 0.94,
+          "waterloss": 0.01
+        },
+        "k": 100
+      },
+      "water": {
+        "TC": {
+          "soilloss": 0.01,
+          "airloss": 0,
+          "recovered": 0.98,
+          "waterloss": 0.01
+        },
+        "k": 100
+      },
+      "totalsolids": {
+        "TC": {
+          "soilloss": 0.3,
+          "airloss": 0,
+          "recovered": 0.69,
+          "waterloss": 0.01
+        },
+        "k": 5
+      }
+    },
+    "attributes": {
+      "electricity_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "electricity": 1,
+          "intermittent": 1,
+          "no_electricity": 1
+        }
+      },
+      "frequency_of_om": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "irregular": 1,
+          "regular": 0,
+          "continous": 0
+        }
+      },
+      "pipe_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_pipes": 1,
+          "difficultly": 1,
+          "pipes": 1
+        }
+      },
+      "pump_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_pumps": 1,
+          "difficultly_available": 1,
+          "pumps": 1
+        }
+      },
+      "concrete_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_concrete": 1,
+          "difficultly_available": 1,
+          "concrete": 1
+        }
+      },
+      "spare_parts": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "low": 1,
+          "technical": 0,
+          "special": 0
+        }
+      },
+      "temperature": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "very_cold": 0.5,
+          "cold": 0.7,
+          "temperate": 1,
+          "warm": 1,
+          "hot": 1
+        }
+      },
+      "flooding": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_flooding": 0.9,
+          "flooding": 1
+        }
+      },
+      "soil_type": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "clay": 1,
+          "silt": 1,
+          "sand": 1,
+          "gravel": 1,
+          "rock": 1
+        }
+      },
+      "groundwater_depth": {
+        "type": "Performance",
+        "function": "Trapez",
+        "parameters": {
+          "a": 0,
+          "b": 0,
+          "c": 999,
+          "d": 999
+        }
+      },
+      "excavation": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "easy": 1,
+          "hard": 1
+        }
+      },
+      "drinking_water_exposure ": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "close": 1,
+          "not_close": 1
+        }
+      },
+      "construction_skills ": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 1,
+          "skilled": 1,
+          "professional": 1
+        }
+      },
+      "design_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 0.5,
+          "professional": 1
+        }
+      },
+      "om_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 1,
+          "skilled": 1,
+          "professional": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "unplanted_drying_bed_sludge",
+    "functionalgroup": "T",
+    "inputs": {
+      "relationship": "OR",
+      "product": [
+        "sludge",
+        "transportedsludge",
+        "transportedtransferred_sludge"
+      ]
+    },
+    "outputs": {
+      "relationship": "AND",
+      "product": [
+        "effluent",
+        "stabilized_sludge",
+        "transportedeffluent",
+        "transportedstabilized_sludge"
+      ]
+    },
+    "massflow": {
+      "phosphor": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0,
+          "waterloss": 0,
+          "stabilized_sludge": 0.62,
+          "effluent": 0.38
+        },
+        "k": 5
+      },
+      "nitrogen": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0.29,
+          "waterloss": 0,
+          "stabilized_sludge": 0.53,
+          "effluent": 0.18
+        },
+        "k": 5
+      },
+      "water": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0.3,
+          "waterloss": 0,
+          "stabilized_sludge": 0.31,
+          "effluent": 0.39
+        },
+        "k": 2
+      },
+      "totalsolids": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0.04,
+          "waterloss": 0,
+          "stabilized_sludge": 0.75,
+          "effluent": 0.21
+        },
+        "k": 100
+      }
+    },
+    "attributes": {
+      "electricity_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "electricity": 1,
+          "intermittent": 1,
+          "no_electricity": 1
+        }
+      },
+      "frequency_of_om": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "irregular": 0,
+          "regular": 1,
+          "continous": 0
+        }
+      },
+      "pipe_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_pipes": 0,
+          "difficultly": 0.5,
+          "pipes": 1
+        }
+      },
+      "pump_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_pumps": 1,
+          "difficultly_available": 1,
+          "pumps": 1
+        }
+      },
+      "concrete_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_concrete": 1,
+          "difficultly_available": 0.75,
+          "concrete": 0.5
+        }
+      },
+      "spare_parts": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "low": 0,
+          "technical": 1,
+          "special": 0
+        }
+      },
+      "temperature": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "very_cold": 0.3,
+          "cold": 0.5,
+          "temperate": 1,
+          "warm": 1,
+          "hot": 1
+        }
+      },
+      "flooding": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_flooding": 0.5,
+          "flooding": 1
+        }
+      },
+      "excavation": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "easy": 1,
+          "hard": 0.5
+        }
+      },
+      "surface_area_offsite": {
+        "type": "Performance",
+        "function": "Trapez",
+        "parameters": {
+          "a": 0.05,
+          "b": 0.05,
+          "c": 999,
+          "d": 999
+        }
+      },
+      "construction_skills ": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 0.5,
+          "professional": 1
+        }
+      },
+      "design_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 0,
+          "professional": 1
+        }
+      },
+      "om_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0.5,
+          "skilled": 1,
+          "professional": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "test_technology",
+    "functionalgroup": "S",
+    "inputs": {
+      "relationship": "NA",
+      "product": [
+        "sludge"
+      ]
+    },
+    "outputs": {
+      "relationship": "NA",
+      "product": [
+        "stabilized_sludge"
+      ]
+    },
+    "massflow": {
+      "nitrogen": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0,
+          "waterloss": 0,
+          "stabilized_sludge": 1
+        },
+        "k": 1
+      },
+      "phosphor": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0,
+          "waterloss": 0,
+          "stabilized_sludge": 1
+        },
+        "k": 1
+      },
+      "totalsolids": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0,
+          "waterloss": 0,
+          "stabilized_sludge": 1
+        },
+        "k": 1
+      },
+      "water": {
+        "TC": {
+          "soilloss": 0,
+          "airloss": 0,
+          "waterloss": 0,
+          "stabilized_sludge": 1
+        },
+        "k": 1
+      }
+    },
+    "attributes": {
+      "water_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "house": 1,
+          "yard": 1,
+          "public": 0.5,
+          "none": 0
+        }
+      },
+      "water_vol_cont_l_per_cap_day": {
+        "type": "Performance",
+        "function": "Trapez",
+        "parameters": {
+          "a": 0,
+          "b": 0,
+          "c": 999,
+          "d": 999
+        }
+      },
+      "electricity_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "electricity": 1,
+          "intermittent": 0.5,
+          "no_electricity": 0
+        }
+      },
+      "fuel_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "fuel": 1,
+          "no_fuel": 0.1
+        }
+      },
+      "frequency_of_om": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "irregular": 0.3,
+          "regular": 0.7,
+          "continous": 0
+        }
+      },
+      "pipe_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_pipes": 0,
+          "difficultly": 0.5,
+          "pipes": 1
+        }
+      },
+      "pump_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_pumps": 1,
+          "difficultly_available": 1,
+          "pumps": 1
+        }
+      },
+      "concrete_supply": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_concrete": 1,
+          "difficultly_available": 0.75,
+          "concrete": 0.5
+        }
+      },
+      "spare_parts": {
+        "type": "Pdf",
+        "function": "categorical",
+        "parameters": {
+          "low": 0.8,
+          "technical": 0.2,
+          "special": 0
+        }
+      },
+      "temperature": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "very_cold": 0.5,
+          "cold": 0.7,
+          "temperate": 1,
+          "warm": 1,
+          "hot": 1
+        }
+      },
+      "flooding": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_flooding": 0.9,
+          "flooding": 1
+        }
+      },
+      "vehicular_access": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "no_access": 0.7,
+          "difficult": 0.8,
+          "full": 1
+        }
+      },
+      "slope": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "flat": 0.2,
+          "not_flat": 1
+        }
+      },
+      "soil_type": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "clay": 0,
+          "silt": 0.25,
+          "sand": 1,
+          "gravel": 0.25,
+          "rock": 0
+        }
+      },
+      "groundwater_depth": {
+        "type": "Performance",
+        "function": "Trapez",
+        "parameters": {
+          "a": 8,
+          "b": 13,
+          "c": 999,
+          "d": 999
+        }
+      },
+      "excavation": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "easy": 1,
+          "hard": 0.5
+        }
+      },
+      "surface_area_onsite": {
+        "type": "Performance",
+        "function": "Trapez",
+        "parameters": {
+          "a": 2,
+          "b": 2,
+          "c": 999,
+          "d": 999
+        }
+      },
+      "surface_area_offsite": {
+        "type": "Performance",
+        "function": "Trapez",
+        "parameters": {
+          "a": 0.05,
+          "b": 0.05,
+          "c": 999,
+          "d": 999
+        }
+      },
+      "drinking_water_exposure ": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "close": 0.5,
+          "not_close": 1
+        }
+      },
+      "construction_skills ": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0.5,
+          "skilled": 1,
+          "professional": 1
+        }
+      },
+      "design_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 0,
+          "skilled": 0,
+          "professional": 1
+        }
+      },
+      "om_skills": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "unskilled": 1,
+          "skilled": 1,
+          "professional": 1
+        }
+      },
+      "cleansing_method": {
+        "type": "Performance",
+        "function": "categorical",
+        "parameters": {
+          "washers": 1,
+          "soft_wipers": 1,
+          "hard_wipers": 0
+        }
+      }
+    }
+  }
+]
