@@ -1,0 +1,50 @@
+{
+  "dry_toilet": {
+    "water": 547.1,
+    "nitrogen": 4.55,
+    "totalsolids": 32.12,
+    "phosphor": 0.548
+  },
+  "pour_flush": {
+    "water": 1277.1,
+    "nitrogen": 4.55,
+    "totalsolids": 32.12,
+    "phosphor": 0.548
+  },
+  "uddt": {
+    "water": 547.1,
+    "nitrogen": 4.55,
+    "totalsolids": 32.12,
+    "phosphor": 0.548
+  },
+  "cistern_flush": {
+    "water": 22447.1,
+    "nitrogen": 4.55,
+    "totalsolids": 32.12,
+    "phosphor": 0.548
+  },
+  "udft": {
+    "water": 22447.1,
+    "nitrogen": 4.55,
+    "totalsolids": 32.12,
+    "phosphor": 0.548
+  },
+  "U_controlled_od": {
+    "water": 547.1,
+    "nitrogen": 4.55,
+    "totalsolids": 32.12,
+    "phosphor": 0.548
+  },
+  "urinal": {
+    "water": 510.98,
+    "nitrogen": 4.001,
+    "totalsolids": 21.54,
+    "phosphor": 0.37
+  },
+  "test_technology": {
+    "water": 547.1,
+    "nitrogen": 4.55,
+    "totalsolids": 32.12,
+    "phosphor": 0.548
+  }
+}
