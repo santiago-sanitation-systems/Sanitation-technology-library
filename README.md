@@ -5,12 +5,12 @@ The Santiago Sanitation Technology Library characterizes sanitation technologies
 
 ## Folders and files
 This repository contains :
--  A folder _documentation_ that contains the _Santiago Sanitation Technology Library Documentation_. The documentation contains:
+-  A folder _Documentation_ that contains the _Santiago Sanitation Technology Library Documentation_. The documentation contains:
 -- Part A: documents the functionalities and the definitions underlying [_Santiago_](https://github.com/santiago-sanitation-systems/Santiago.jl/tree/a77dec97b3048b53c09a33de8aea7e165f60ef65)
 -- Part B: provides a data sheet for all currently implemented technologies presenting all original data used to describe the technology for [_Santiago_](https://github.com/santiago-sanitation-systems/Santiago.jl/tree/a77dec97b3048b53c09a33de8aea7e165f60ef65) as well as literature references and assumptions.
 -  A folder _latest_full_example_input_files_ with the latest version of the technology library in the json format and addtional files required by [_Santiago_](https://github.com/santiago-sanitation-systems/Santiago.jl/tree/a77dec97b3048b53c09a33de8aea7e165f60ef65). Refer to the _Santiago Wiki_ for more information about the files and how to use them.
 - A folder _bestpractice_example_input_files_ with a realistic but reduced example of the technology library and additional input files for [_Santiago_](https://github.com/santiago-sanitation-systems/Santiago.jl/tree/a77dec97b3048b53c09a33de8aea7e165f60ef65). This is the standard example used by the example documented in the [_Santiago Wiki_](https://github.com/santiago-sanitation-systems/Santiago.jl/wiki).
-- The folder _graphics_ contains graphics as they are used in the _Santiago Wiki_ and can therefore be neglected.
+- The folder _Graphics_ contains graphics as they are used in the _Santiago Wiki_ and can therefore be neglected.
 
 ## Download for usage with Santiago
 
