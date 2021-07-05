@@ -3,40 +3,38 @@
 The Santiago Sanitation Technology Library characterizes sanitation technologies in a format that can be used directly with
 [Santiago](https://github.com/santiago-sanitation-systems/Santiago.jl).
 
-## Files
+## Folders and files
 This repository contains :
-- The latest version of the technology library in the json format, a default input case file, and a default input masses file as they are used in [_Santiago_](https://github.com/santiago-sanitation-systems/Santiago.jl/tree/a77dec97b3048b53c09a33de8aea7e165f60ef65). Refer to the _Santiago Wiki_ for more information about the files and how to use them. 
-- The PDF version of the technology library also including some documentation and the raw data and original sources for the data contained in the library (mainly for transfer coefficents). This document was originally published on the Eawag open data repository ERIC: Spuhler, D. and Roller, L. 2020  Sanitation technology library: details and data sources for appropriateness profiles and transfer coefficients, Eawag - Swiss Federal Institute of Aquatic Science and Technology, Dübendorf. DOI: www.doi.org/10.25678/0000ss.
-- The folder documentation contains some explanations about the functionalities of calculations in _Santiago_ or further information about appropriateness attributes and their calculation. 
-- The folder "graphics" contains graphics as they are used in the _Santiago Wiki_ and can therefore be neglected.
+-  A folder _documentation_ that contains the _Santiago Sanitation Technology Library Documentation_. The documentation contains:
+-- Part A: documents the functionalities and the definitions underlying [_Santiago_](https://github.com/santiago-sanitation-systems/Santiago.jl/tree/a77dec97b3048b53c09a33de8aea7e165f60ef65)
+-- Part B: provides a data sheet for all currently implemented technologies presenting all original data used to describe the technology for [_Santiago_](https://github.com/santiago-sanitation-systems/Santiago.jl/tree/a77dec97b3048b53c09a33de8aea7e165f60ef65) as well as literature references and assumptions.
+-  A folder _latest_full_example_input_files_ with the latest version of the technology library in the json format and addtional files required by [_Santiago_](https://github.com/santiago-sanitation-systems/Santiago.jl/tree/a77dec97b3048b53c09a33de8aea7e165f60ef65). Refer to the _Santiago Wiki_ for more information about the files and how to use them.
+- A folder _bestpractice_example_input_files_ with a realistic but reduced example of the technology library and additional input files for [_Santiago_](https://github.com/santiago-sanitation-systems/Santiago.jl/tree/a77dec97b3048b53c09a33de8aea7e165f60ef65). This is the standard example used by the example documented in the [_Santiago Wiki_](https://github.com/santiago-sanitation-systems/Santiago.jl/wiki).
+- The folder _graphics_ contains graphics as they are used in the _Santiago Wiki_ and can therefore be neglected.
 
-## Download
+## Download for usage with Santiago
 
-The _latest_ version of the technology file can be downloaded from Julia
-with
+The _latest_ version of the technology library can be downloaded from Julia with
 ```Julia
-url = "https://raw.githubusercontent.com/santiago-sanitation-systems/Sanitation-technology-library/master/technology_library.json"
-download(url, "technology_library.json")
-```
-
-The input case template can be downloaded with the following code:
+date = Dates.today()
+    url = "https://raw.githubusercontent.com/santiago-sanitation-systems/Sanitation-technology-library/master/latest_full_example_input_files       /latest_full_technology_library.json"
+    download(url, "input/latest_full_technology_library_$date.json") 
+ ```
+The _additional_ files can be downloaded from Julia with 
 ```Julia
-url_1 = "https://raw.githubusercontent.com/santiago-sanitation-systems/Sanitation-technology-library/master/case_input.json"
-download(url_1, "input/case_input_template.json")
-```
-The default input masses file is downloaded and converted as follows:
-```Julia
-# Download the default input masses file
+# example case
+    url = "https://raw.githubusercontent.com/santiago-sanitation-systems/Sanitation-technology-library/master/latest_full_example_input_files/latest_full_case_input.json"
+    download(url, "input/latest_full_case_input_$date.json")
 
-    url_2 = "https://raw.githubusercontent.com/santiago-sanitation-systems/Sanitation-technology-library/master/default_input_masses.json"
-    download(url_2, "input/default_input_masses.json")
+# example inflow masses for user interfaces
+    url = "https://raw.githubusercontent.com/santiago-sanitation-systems/Sanitation-technology-library/master/latest_full_example_input_files/latest_full_inflow_masses.json"
+    download(url, "input/latest_full_inflow_masses_$date.json")
 
-# read in default_input_masses
-
-    _input_masses = open("input/default_input_masses.json","r") do f
+# the inflow masses have to be converted to type 'Dict{String,Dict{String,Real}}'
+    input_inflow_file = "input/latest_full_inflow_masses_$date.json"
+    _input_masses = open(input_inflow_file,"r") do f  
         JSON3.read(f)
     end
-# convert to type 'Dict{String,Dict{String,Real}}'
     input_masses = Dict(String(k1) => Dict(String(k2) => v2 for (k2, v2) in v1)
                      for (k1,v1) in _input_masses)
     end
