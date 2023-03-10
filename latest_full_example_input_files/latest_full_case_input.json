@@ -1,99 +1,148 @@
 {
-  "name": "TEMPLATE_TOWN",
+  "name": "Template_Town",
   "description": "A Case Template for the input case in Santiago",
-  "inhabitants": 2144,
+  "inhabitants": 1200,
   "attributes": {
-    "WATER.SUPPLY": {
-      "type": "PDF",
-      "function": "CATEGORICAL",
+    "water_supply": {
+      "type": "Pdf",
+      "function": "categorical",
       "parameters": {
-        "a": 0.2,
-        "b": 0.4,
-        "c": 0.3,
-        "d": 0.1
+        "house": 0.3,
+        "yard": 0.6,
+        "public": 0.1,
+        "none": 0
       }
     },
-    "ENERGY.SUPPLY": {
-      "type": "PDF",
-      "function": "RANGE",
+    "water_volume": {
+      "type": "Pdf",
+      "function": "Trapez",
       "parameters": {
-        "a": 22,
-        "b": 24
+        "a": 10,
+        "b": 20,
+        "c": 30,
+        "d": 70
       }
     },
-    "WATER.SUPPLY.DISRUPTION": {
-      "type": "PDF",
-      "function": "RANGE",
+    "electricity_supply": {
+      "type": "Pdf",
+      "function": "categorical",
       "parameters": {
-        "a": 2,
-        "b": 8
+        "electricity": 0.2,
+        "intermittent": 0.8,
+        "no_electricity": 0
       }
     },
-    "POWER.SUPPLY.DISRUPTION": {
-      "type": "PDF",
-      "function": "RANGE",
+    "fuel_supply": {
+      "type": "Pdf",
+      "function": "categorical",
       "parameters": {
-        "a": 4,
-        "b": 12
+        "fuel": 0.9,
+        "no_fuel": 0.1
       }
     },
-    "FREQUENCY.OF.OM": {
-      "type": "PERFORMANCE",
-      "function": "RANGE",
+    "frequency_of_om": {
+      "type": "Performance",
+      "function": "categorical",
       "parameters": {
-        "a": 0,
-        "b": 5
+        "irregular": 1,
+        "regular": 0.5,
+        "continous": 0
       }
     },
-    "TEMPERATURE.RANGE": {
-      "type": "PDF",
-      "function": "TRIANGLE",
+    "pipe_supply": {
+      "type": "Pdf",
+      "function": "categorical",
       "parameters": {
-        "a": 0,
-        "b": 25,
-        "c": 46
+        "no_pipes": 0.4,
+        "difficultly": 0.5,
+        "pipes": 0.1
       }
     },
-    "FLOODING": {
-      "type": "PDF",
-      "function": "RANGE",
+    "pump_supply": {
+      "type": "Pdf",
+      "function": "categorical",
       "parameters": {
-        "a": 0,
-        "b": 3
+        "no_pumps": 0.9,
+        "difficultly_available": 0.1,
+        "pumps": 0
       }
     },
-    "VEHICULAR.ACCESS": {
-      "type": "PDF",
-      "function": "TRAPEZ",
+    "concrete_supply": {
+      "type": "Pdf",
+      "function": "categorical",
       "parameters": {
-        "a": 0.5,
-        "b": 5,
-        "c": 7,
-        "d": 8
+        "no_concrete": 0.05,
+        "difficultly_available": 0.15,
+        "concrete": 0.8
       }
     },
-    "SLOPE": {
-      "type": "PDF",
-      "function": "TRIANGLE",
+    "spare_parts": {
+      "type": "Performance",
+      "function": "categorical",
       "parameters": {
-        "a": 0,
-        "b": 9,
-        "c": 15
+        "low": 1,
+        "technical": 0.7,
+        "special": 0.3
       }
     },
-    "SOIL.TYPE": {
-      "type": "PDF",
-      "function": "CATEGORICAL",
+    "temperature": {
+      "type": "Pdf",
+      "function": "categorical",
       "parameters": {
-        "a": 0.05,
-        "b": 0.8,
-        "c": 0.15,
-        "d": 0
+        "very_cold": 0,
+        "cold": 0.1,
+        "temperate": 0.2,
+        "warm": 0.5,
+        "hot": 0.2
       }
     },
-    "GROUNDWATER.DEPTH": {
-      "type": "PDF",
-      "function": "TRAPEZ",
+    "flooding": {
+      "type": "Pdf",
+      "function": "categorical",
+      "parameters": {
+        "flooding": 0.01,
+        "no_flooding": 0.99
+      }
+    },
+    "vehicular_access": {
+      "type": "Pdf",
+      "function": "categorical",
+      "parameters": {
+        "no_access": 0.1,
+        "difficult": 0.3,
+        "full": 0.6
+      }
+    },
+    "slope": {
+      "type": "Pdf",
+      "function": "categorical",
+      "parameters": {
+        "flat": 0.2,
+        "not_flat": 0.8
+      }
+    },
+    "excavation": {
+      "type": "Pdf",
+      "function": "categorical",
+      "parameters": {
+        "easy": 0.8,
+        "hard": 0.2
+      }
+    },
+    "soil_type": {
+      "type": "Pdf",
+      "function": "categorical",
+      "parameters": {
+        "clay": 0.05,
+        "silt": 0.8,
+        "sand": 0.15,
+        "gravel": 0,
+        "rock": 0
+      }
+    },
+    "groundwater_depth": {
+      "type": "Pdf",
+      "function": "Trapez",
       "parameters": {
         "a": 6,
         "b": 7,
@@ -101,144 +150,112 @@
         "d": 25
       }
     },
-    "EXCAVATION": {
-      "type": "PDF",
-      "function": "CATEGORICAL",
+    "surface_area_onsite": {
+      "type": "Pdf",
+      "function": "Trapez",
       "parameters": {
         "a": 1,
-        "b": 0
+        "b": 3,
+        "c": 7,
+        "d": 15
       }
     },
-    "POPULATION.DENSITY": {
-      "type": "PDF",
-      "function": "RANGE",
+    "surface_area_offsite": {
+      "type": "Pdf",
+      "function": "Trapez",
       "parameters": {
-        "a": 150,
-        "b": 300
-      }
-    },
-    "CONSTRUCTION.SKILLS": {
-      "type": "PERFORMANCE",
-      "function": "TRAPEZ",
-      "parameters": {
-        "a": 0,
-        "b": 0,
-        "c": 3,
-        "d": 5
-      }
-    },
-    "DESIGN.SKILLS": {
-      "type": "PERFORMANCE",
-      "function": "TRAPEZ",
-      "parameters": {
-        "a": 0,
-        "b": 0,
-        "c": 5,
-        "d": 6
-      }
-    },
-    "OM.SKILLS": {
-      "type": "PERFORMANCE",
-      "function": "TRAPEZ",
-      "parameters": {
-        "a": 0,
-        "b": 0,
-        "c": 4,
+        "a": 0.05,
+        "b": 1,
+        "c": 2,
         "d": 7
       }
     },
-    "MANAGEMENT": {
-      "type": "PDF",
-      "function": "CATEGORICAL",
+    "drinking_water_exposure ": {
+      "type": "Pdf",
+      "function": "categorical",
       "parameters": {
-        "a": 0.8,
-        "b": 0.1,
-        "c": 0.1
+        "close": 0.1,
+        "not_close": 0.9
       }
     },
-    "PIPE.SUPPLY": {
-      "type": "PDF",
-      "function": "RANGE",
+    "construction_skills ": {
+      "type": "Pdf",
+      "function": "categorical",
       "parameters": {
-        "a": 20,
-        "b": 150
+        "unskilled": 0.2,
+        "skilled": 0.7,
+        "professional": 0.1
       }
     },
-    "PUMP.SUPPLY": {
-      "type": "PDF",
-      "function": "CATEGORICAL",
+    "design_skills": {
+      "type": "Pdf",
+      "function": "categorical",
       "parameters": {
-        "a": 0.7,
-        "b": 0.1,
-        "c": 0.2
+        "unskilled": 0.3,
+        "skilled": 0.5,
+        "professional": 0.2
       }
     },
-    "CONCRETE.SUPPLY": {
-      "type": "PDF",
-      "function": "RANGE",
+    "om_skills": {
+      "type": "Pdf",
+      "function": "categorical",
       "parameters": {
-        "a": 1500000,
-        "b": 2150000
+        "unskilled": 0.1,
+        "skilled": 0.9,
+        "professional": 0
       }
     },
-    "SPARE.PARTS.SUPPLY": {
-      "type": "PERFORMANCE",
-      "function": "CATEGORICAL",
+    "cleansing_method": {
+      "type": "Pdf",
+      "function": "categorical",
       "parameters": {
-        "a": 1,
-        "b": 0.7,
-        "c": 0.3
+        "washers": 0.1,
+        "soft_wipers": 0.7,
+        "hard_wipers": 0.2
       }
     },
-    "SURFACE.AREA": {
-      "type": "PDF",
-      "function": "RANGE",
+    "lifetime": {
+      "type": "Pdf",
+      "function": "categorical",
       "parameters": {
-        "a": 5,
-        "b": 18
+        "short_(_1_year)": 0,
+        "medium_(1-5_years)": 0.3,
+        "long_(>5_years)": 0.7
       }
     },
-    "WATER.VOLUME.CHANGE": {
-      "type": "PDF",
-      "function": "RANGE",
+    "speed_implement_toilet": {
+      "type": "Performance",
+      "function": "categorical",
       "parameters": {
-        "a": 40,
-        "b": 100
+        "rapid_(_3_days)": 1,
+        "moderate_(3_days_to_2_weeks)": 1,
+        "slow_(>_2_weeks)": 1
       }
     },
-    "POLLUTION.LOAD": {
-      "type": "PDF",
-      "function": "RANGE",
+    "speed_implement_treatment": {
+      "type": "Performance",
+      "function": "categorical",
       "parameters": {
-        "a": 40,
-        "b": 100
+        "rapid_(few_days_to_a_week)": 1,
+        "moderate_(few_weeks_up_to_three_months)": 1,
+        "slow_(>_3_months)": 1
       }
     },
-    "USER.AWARENESS": {
-      "type": "PDF",
-      "function": "RANGE",
+    "scalability": {
+      "type": "Pdf",
+      "function": "categorical",
       "parameters": {
-        "a": 3,
-        "b": 5
+        "easy": 0.7,
+        "difficult": 0.3
       }
     },
-    "CLEANSING.METHOD": {
-      "type": "PDF",
-      "function": "CATEGORICAL",
+    "construction_parts": {
+      "type": "Performance",
+      "function": "categorical",
       "parameters": {
-        "a": 0.7,
-        "b": 0.3
-      }
-    },
-    "ODOUR": {
-      "type": "PERFORMANCE",
-      "function": "CATEGORICAL",
-      "parameters": {
-        "a": 0.05,
-        "b": 0.45,
-        "c": 0.4,
-        "d": 0.1,
-        "e": 0
+        "simple": 1,
+        "technical": 1,
+        "special": 1
       }
     }
   }
