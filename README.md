@@ -2,6 +2,10 @@
 
 The Santiago Sanitation Technology Library characterizes sanitation technologies in a format that can be used directly with
 [Santiago](https://github.com/santiago-sanitation-systems/Santiago.jl).
+The methodology to establish this library and all data including literature references and assumptions are compiled in the [Sanitatation Technology Library documentation](Spuhler_et_al_2023_SANTIAGO_Documentation_and_technology_data_library.pdf).
+
+## Citation
+Spuhler, D. Scheidegger, A., Roller, L., Fritzsche, J., Willimann, C., Ilmanen, K. (2022) SANTIAGO documentation and technology library: functionalities, definitions and data for appropriateness profiles and transfer coefficients. Continuously updated URL: https://github.com/SANTIAGO-sanitation-systems/Sanitation-technology-library
 
 ## Folders and files
 This repository contains :
